@@ -1,0 +1,51 @@
+dialog {
+    background: white;
+    /* border-radius: 0 0 20px 20px; */
+    position: fixed;
+    top: 30vh;
+    left: 35vw;
+    min-height: 40%;
+    width: 30vw;
+    padding: 0 !important;
+  }
+  .place-holder {
+    background: #0e4f1f;
+    height: 2rem;
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .place-holder__content {
+    color: white;
+    font-weight: bold;
+    padding-top: 0.4rem;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .content-content {
+    padding-bottom: 3rem;
+  }
+
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5); /* Custom backdrop color */
+  }
+
+  dialog {
+    padding: 20px;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .modal-buttons {
+    width: 100%;
+    margin: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+  }

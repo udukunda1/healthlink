@@ -1,0 +1,28 @@
+.nav {
+    background: #0e4f1f;
+
+
+}
+
+.nav-lists {
+    list-style: none;
+    color: white;
+    display: flex;
+    height: 3rem;
+    font-weight: 500;
+    font-size: 16px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.logo {
+    width: 30%;
+}
+
+.nav-lists__links {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

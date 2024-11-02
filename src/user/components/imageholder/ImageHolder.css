@@ -1,0 +1,25 @@
+.img__bg {
+    background: linear-gradient(to right, transparent, rgba(14,79,31,0.3)), url('../../../image/image.jpg');
+    width: 100vw;
+    height: 70vh;
+    background-size: cover;
+    background-position:0% 20%;
+    padding: 17.5vh 0;
+  }
+
+  .img__bg--item {
+    width: 30%;
+    height: 100%;
+    background: white;
+    margin-left: 5% ;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  .img__bg--item-title {
+    padding: 1rem 3rem;
+    color: #0e4f1f;
+    margin-left: 2rem;
+    font-weight: bold;
+  }
