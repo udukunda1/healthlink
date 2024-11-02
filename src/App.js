@@ -1,3 +1,6 @@
+
+
+import Footer from "./shared/components/footers/footer";
 import Navbar from "./shared/components/navigation/Navbar";
 import Home from "./user/pages/home/Home";
 
@@ -8,6 +11,7 @@ function App() {
     <>
     <Navbar />
     <Home />
+    <Footer />
     </>
   )
 }

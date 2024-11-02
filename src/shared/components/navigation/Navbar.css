@@ -1,7 +1,7 @@
 .nav {
     background: #0e4f1f;
-
-
+    width: 100%;
+    position: fixed;
 }
 
 .nav-lists {

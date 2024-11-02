@@ -1,0 +1,9 @@
+.student-experience__heading {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.student-experience {
+    border: 1px solid #0e4f1f;
+    padding: 2rem;
+}

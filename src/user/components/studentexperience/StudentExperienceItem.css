@@ -1,0 +1,43 @@
+
+.StudentExperienceItem {
+    min-height: 10rem;
+    width: 25vw;
+    border: 2px solid #0e4f1f;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px rgba(14,79,31,0.8);
+}
+
+.StudentExperienceItem__heading {
+    display: flex;
+    align-items: center;
+}
+
+.StudentExperienceItem__heading--image {
+    width: 3rem;
+    height: 3rem;
+    background: #0e4f1f;
+    border-radius: 50%;
+    margin: 0.5rem 0.7rem;
+    overflow: hidden;       /* Hide overflow to keep the image within the circle */
+    display: flex;          /* Center the image */
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0e4f1f;
+}
+
+.StudentExperienceItem__heading--image img {
+    width: 100%;            /* Make the image take up full width */
+    height: 100%;           /* Adjust height to fit */
+    object-fit: cover;      /* Crop to fill the container while preserving aspect ratio */
+  }
+
+.StudentExperienceItem__heading--name {
+    color:#0e4f1f;
+    font-weight: 800;
+}
+
+.StudentExperienceItem__content {
+    padding: 1rem;
+}
