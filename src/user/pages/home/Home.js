@@ -6,6 +6,8 @@ import Modal from "../../../shared/components/UI/Modal/modal";
 import useOpenModal from "../../../shared/context/useOpenModal";
 import './Home.css';
 import StudentExperience from '../../components/studentexperience/StudentExperience';
+import PharmacyItemsHome from '../../../pharmacy/components/pharmacy/PharmacyItemsHome';
+// import { ChakraProvider } from '@chakra-ui/react';
 
 function Home() {
     const [modalRef, openModal] = useOpenModal();
@@ -30,6 +32,7 @@ function Home() {
       <Button onClick={openModal}>Get Started</Button>
       </div>
       </div>
+      <PharmacyItemsHome />
       </>
     );
 }

@@ -1,0 +1,22 @@
+.pharmacy-card {
+    width: 25%;
+    height: 60vh;
+    border: 2px solid #0e4f1f;
+    border-radius: 5px;
+}
+
+.pharmacy-card__image {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;       /* Hide overflow to keep the image within the circle */
+    display: flex;          /* Center the image */
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0e4f1f;
+}
+
+.pharmacy-card__image img {
+    width: 100%;            /* Make the image take up full width */
+    height: 100%;           /* Adjust height to fit */
+    object-fit: cover;      /* Crop to fill the container while preserving aspect ratio */
+  }
