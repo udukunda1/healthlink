@@ -1,10 +1,12 @@
 import React, { useRef, useImperativeHandle, forwardRef } from 'react';
 
+//addButton={name: '', handleClick={...}};
+
 
 import Button from '../Button/Button';
 import './Modal.css';
 
-const Modal = forwardRef((props, ref) => {
+const Modal = forwardRef(({children, addButton='', ...props}, ref) => {
   let a = useRef(null);
 
   function handleClose() {
@@ -26,10 +28,13 @@ const Modal = forwardRef((props, ref) => {
         <p className='place-holder__content'>Health Link</p>
       </div>
       <div className='content'>
-        <h3 className='content-content'>Hello, Welcome to health link ; soon we will be able to link students to pharmacies.</h3>
+        <h3 className='content-content'>
+          {children}
+        </h3>
       </div>
       <div className='modal-buttons'>
-      <Button onClick={handleClose}>Close</Button>
+      {!!addButton && <Button onClick={addButton.handleClick} {...props}>{addButton.name}</Button>}
+      <Button onClick={handleClose} type='red' className='red' {...props}>Close</Button>
       </div>
     </dialog>
   );

@@ -23,6 +23,19 @@
     color: white;
 }
 
+.ui-button.red {
+    background: red;
+    color: white;
+    border: 1.5px solid red;
+}
+
+.ui-button.red:hover {
+    background: white;
+    color: red;
+    border: 2px solid red; /* Change border color on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 /*by default it is cta-blue which follows btn styling*/
 .cta-white {
     background: white;

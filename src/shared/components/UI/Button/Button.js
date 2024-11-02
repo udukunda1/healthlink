@@ -1,6 +1,8 @@
 import './Button.css';
 
-function Button({children , type='button', className,...props}){
+//className='cta-white'|| 'button(default)' || 'red';
+
+function Button({children , type='button', className = '',...props}){
 
     if(type === 'a'){
         return (
@@ -9,6 +11,15 @@ function Button({children , type='button', className,...props}){
         </a>
         )
     }
+
+    if(type === 'red'){
+        return (
+            <button className={`ui-button ${className}`} {...props}>
+                {children}
+            </button>
+            )
+    }
+
     return (
         <button className='ui-button' {...props}>
             {children}
