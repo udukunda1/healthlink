@@ -63,4 +63,10 @@
 .pharmacy-details__reviews {
     /* background: rgba(118, 107, 182, 0.558); */
     grid-area: reviews;
+    width: 40vw;
+}
+
+.pharmacy-details__reviews h2 {
+    text-align: center;
+    color: #0e4f1f;
 }

@@ -2,6 +2,7 @@ import Button from '../../../shared/components/UI/Button/Button';
 import Details from '../../components/pharmacydetails/Details';
 import Inventory from '../../components/pharmacydetails/Inventory';
 import Map from '../../components/pharmacydetails/Map';
+import PharmcyStudentReviews from '../../components/pharmacydetails/PharmcyStudentReviews';
 import './PharmacyDetails.css';
 
 
@@ -29,14 +30,8 @@ function PharmacyDetails() {
                 </div>
             </div>
             <div className='pharmacy-details__reviews'>
-                <h2>student reviews</h2>
-                <h4>review</h4>
-                <h4>review</h4>
-                <h4>review</h4>
-                <h4>review</h4>
-                <h4>review</h4>
-                <h4>review</h4>
-                <h4>review</h4>
+            <h2>Students reviews</h2>
+               <PharmcyStudentReviews />
             </div>
         </div>
         </>

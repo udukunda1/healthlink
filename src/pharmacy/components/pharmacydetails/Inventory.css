@@ -1,0 +1,15 @@
+.Inventory h3 {
+    padding-bottom: 0.5rem;
+}
+
+.Inventory li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    color: #0c3517;
+}
+
+.Inventory span{
+    padding-left: 0.3rem;
+}
