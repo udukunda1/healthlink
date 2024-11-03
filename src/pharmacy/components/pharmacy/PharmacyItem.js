@@ -1,15 +1,15 @@
 import './PharmacyItem.css';
-import obed from '../../../image/obed.jpeg'
+// import obed from '../../../image/obed.jpeg'
 
-function PharmacyItem() {
+function PharmacyItem({title, content, image}) {
     return(
         <div className='pharmacy-card'>
             <div className='pharmacy-card__image'>
-                <img src={obed} alt='img' />
+                <img src={image} alt='img' />
             </div>
             <div className='pharmacy-card__content'>
-                <h4>kigali pharma</h4>
-                <p>here for you</p>
+                <h2>{title}</h2>
+                <p>{content}</p>
             </div>
         </div>
     )

@@ -1,0 +1,41 @@
+.footer {
+    height: 30vh;
+    background: #0e4f1f;
+    color: white;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer__main-contents {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    padding-bottom: 2rem 2rem 1rem 2rem;
+}
+
+.footer__main-contents p {
+    padding: 0.2rem;
+}
+
+.footer__main-contents a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__bottom-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.footer__bottom-content-1 {
+    align-self: center;
+    padding-bottom: 2rem;
+}
+
+.footer__bottom-content-2{
+    display: flex;
+    justify-content: space-between;
+}

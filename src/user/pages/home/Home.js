@@ -32,7 +32,10 @@ function Home() {
       <Button onClick={openModal}>Get Started</Button>
       </div>
       </div>
+      <section className='featured-pharmacies'>
+        <h1>Featuted Pharmacies.</h1>
       <PharmacyItemsHome />
+      </section>
       </>
     );
 }

@@ -28,7 +28,7 @@ function StudentExperienceItems(){
 
     return (
         <div className='StudentExperienceItems'>
-            {reviews.map(review => <StudentExperienceItem name={review.name} content={review.content} image={review.image} />)}
+            {reviews.map(review => <StudentExperienceItem key={review.content} name={review.name} content={review.content} image={review.image} />)}
         </div>
     )
 }

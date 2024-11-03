@@ -16,6 +16,22 @@
     padding: 0 2rem;
 }
 
+.nav-lists a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-lists a.link:hover {
+    border-bottom: 4px solid white;
+    padding-bottom: 0.1rem;
+}
+
+.nav-lists a.link.active {
+    border-bottom: 4px solid white;
+    padding-bottom: 0.1rem;
+}
+
+
 .logo {
     width: 30%;
 }
