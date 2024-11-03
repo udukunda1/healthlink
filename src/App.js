@@ -5,6 +5,7 @@ import RootLayout from './user/pages/RootLayout';
 import Directory from './pharmacy/pages/directory/Directory';
 import ErrorPage from './user/pages/errorpage/ErrorPage';
 import PharmacyDetails from './pharmacy/pages/pharmacydetails/PharmacyDetails';
+import AvailabilitySearch from './pharmacy/pages/availabilitysearch/AvailabilitySearch';
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
     children: [
       {path: '/', element: <Home />},
       {path: '/directory', element: <Directory />},
-      {path: '/directory/details/:pharmacyId', element: <PharmacyDetails />}
+      {path: '/directory/details/:pharmacyId', element: <PharmacyDetails />},
+      {path: '/search', element: <AvailabilitySearch />}
     ]
   }
 ])

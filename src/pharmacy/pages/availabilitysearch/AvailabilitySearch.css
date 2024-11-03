@@ -1,0 +1,12 @@
+.availability-search {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.availability-search > h1 {
+    color: #0e4f1f;
+    padding: 1rem 0;
+}

@@ -3,7 +3,7 @@ import pharma2 from '../../image/pharma2.png';
 import pharma3 from '../../image/pharma3.png';
 import obed from '../../image/obed.jpeg';
 import cynthia from '../../image/cynthia.jpeg';
-import silas from  '../../image/silas.jpeg';
+import silas from '../../image/silas.jpeg';
 
 export const pharmacies = [
     {
@@ -26,14 +26,9 @@ export const pharmacies = [
             medicines: [
                 "Aspirin",
                 "Ibuprofen",
-                "Acetaminophen",
-                "Amoxicillin",
-                "Lisinopril",
                 "Metformin",
-                "Atorvastatin",
-                "Omeprazole",
-                "Albuterol",
-                "Sertraline"
+                "Lisinopril",
+                "Albuterol"
             ]
         },
         studentsReviews: [
@@ -72,16 +67,11 @@ export const pharmacies = [
         inventory: {
             updatedAt: '15/4/2024',
             medicines: [
-                "Aspirin",
-                "Ibuprofen",
-                "Acetaminophen",
                 "Amoxicillin",
-                "Lisinopril",
-                "Metformin",
                 "Atorvastatin",
                 "Omeprazole",
-                "Albuterol",
-                "Sertraline"
+                "Sertraline",
+                "Ibuprofen"
             ]
         },
         studentsReviews: [
@@ -115,16 +105,11 @@ export const pharmacies = [
         inventory: {
             updatedAt: '11/4/2024',
             medicines: [
-                "Aspirin",
-                "Ibuprofen",
                 "Acetaminophen",
-                "Amoxicillin",
                 "Lisinopril",
-                "Metformin",
-                "Atorvastatin",
+                "Sertraline",
                 "Omeprazole",
-                "Albuterol",
-                "Sertraline"
+                "Albuterol"
             ]
         },
         studentsReviews: [
@@ -159,15 +144,10 @@ export const pharmacies = [
             updatedAt: '30/10/2024',
             medicines: [
                 "Aspirin",
-                "Ibuprofen",
-                "Acetaminophen",
-                "Amoxicillin",
-                "Lisinopril",
                 "Metformin",
-                "Atorvastatin",
-                "Omeprazole",
+                "Lisinopril",
                 "Albuterol",
-                "Sertraline"
+                "Ibuprofen"
             ]
         },
         studentsReviews: [
@@ -201,16 +181,11 @@ export const pharmacies = [
         inventory: {
             updatedAt: '28/3/2023',
             medicines: [
-                "Aspirin",
-                "Ibuprofen",
-                "Acetaminophen",
-                "Amoxicillin",
-                "Lisinopril",
-                "Metformin",
-                "Atorvastatin",
                 "Omeprazole",
-                "Albuterol",
-                "Sertraline"
+                "Sertraline",
+                "Amoxicillin",
+                "Ibuprofen",
+                "Aspirin"
             ]
         },
         studentsReviews: [
@@ -239,10 +214,10 @@ export const pharmacies = [
     {
         id: '6',
         image: pharma2,
-        title: 'new generation',
-        address: 'kabuga',
+        title: 'New Generation',
+        address: 'Kabuga',
         tel: '+250788990376',
-        workingHours: 'always',
+        workingHours: 'Always',
         avairableServises: [],
         inventory: {
             updatedAt: '28/3/2023',

@@ -11,7 +11,7 @@ function Navbar() {
             <div className='nav-lists__links'>
             <li className="nav-list"><NavLink to="/" className={({isActive}) => isActive? 'link active' : 'link'}>Home</NavLink></li>
             <li className="nav-list"><NavLink to="/directory" className={({isActive}) => isActive? 'link active' : 'link'}>Pharmacy directory</NavLink></li>
-            <li className="nav-list">Med availability Search</li>
+            <li className="nav-list"><NavLink to="/search" className={({isActive}) => isActive? 'link active' : 'link'}>Med availability Search</NavLink></li>
             <li className="nav-list"><Button type='a' className='cta-white'>Login</Button></li>
             </div>
         </ul>

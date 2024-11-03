@@ -58,5 +58,5 @@
 
 .cta-white:active {
     background: white;
-    color: #0e4f1f;
+    color: #0e4f1f !important;
 }

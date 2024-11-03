@@ -13,7 +13,7 @@ function Footer() {
                 </div>
                 <div className='footer__main-content'>
                 <p><Link to="/directory">Pharmacy Directory</Link></p>
-                <p><a href='#link4'>Med Availability Search</a></p>
+                <p><Link to="/search">Med Availability Search</Link></p>
                 </div>
             </div>
             <div className='footer__bottom-contents'>

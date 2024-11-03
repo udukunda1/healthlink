@@ -24,6 +24,11 @@
     text-decoration: none;
 }
 
+.footer__main-contents a:active {
+    color: #0e4f1f;
+    background: white;
+}
+
 .footer__bottom-contents {
     display: flex;
     flex-direction: column;
