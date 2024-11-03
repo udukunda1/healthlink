@@ -41,3 +41,7 @@
 .StudentExperienceItem__content {
     padding: 1rem;
 }
+
+.StudentExperienceItem__heading--name .stars {
+    color: gold;
+}

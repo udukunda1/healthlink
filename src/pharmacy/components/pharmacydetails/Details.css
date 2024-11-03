@@ -1,0 +1,14 @@
+.datails-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datails-container .item {
+    padding: 0.2rem;
+}
+
+.datails-container .item1,
+.datails-container .item4 {
+    color: #0e4f1f;
+}

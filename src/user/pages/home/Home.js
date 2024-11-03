@@ -1,9 +1,9 @@
 
 
-import ImageHolder from '../../components/imageholder/ImageHolder';
+import ImageHolder from '../../components/imageholder1/ImageHolder1';
 import Button from "../../../shared/components/UI/Button/Button";
 import Modal from "../../../shared/components/UI/Modal/modal";
-import useOpenModal from "../../../shared/context/useOpenModal";
+import useOpenModal from "../../../shared/hooks/useOpenModal";
 import './Home.css';
 import StudentExperience from '../../components/studentexperience/StudentExperience';
 import PharmacyItemsHome from '../../../pharmacy/components/pharmacy/PharmacyItemsHome';

@@ -1,4 +1,4 @@
-import './ImageHolder.css';
+import './ImageHolder1.css';
 
 function Header() {
     return (

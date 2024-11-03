@@ -1,3 +1,5 @@
+import { FaStar } from 'react-icons/fa';
+
 import './StudentExperienceItem.css'
 
 function StudentExperienceItem({name, content, image}) {
@@ -10,6 +12,7 @@ function StudentExperienceItem({name, content, image}) {
                 </div>
                 <div className="StudentExperienceItem__heading--name">
                     <p>{name}</p>
+                    <p className='stars'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                 </div>
             </div>
             <div className="StudentExperienceItem__content">

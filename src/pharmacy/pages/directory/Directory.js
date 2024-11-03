@@ -1,9 +1,15 @@
+import ImageHolder2 from '../../components/imageholder2/ImageHolder2';
+import PharmacyItemsDirectory from '../../components/pharmacy/PharmacyItemsDirectory';
+import './Directory.css';
+
 function Directory(){
     return (
         <>
-        <h1>hello im directory</h1>
-        <h1>hello im directory</h1>
-        <h1>hello im directory</h1>
+        <ImageHolder2 />
+        <section className='pharmacies'>
+            <h1> Pharmacy Directory.</h1>
+            <PharmacyItemsDirectory />
+         </section>
         </>
     )
 }
