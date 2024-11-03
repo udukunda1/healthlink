@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
+import { FaCopyright } from 'react-icons/fa';
 
 function Footer() {
 
@@ -10,7 +12,7 @@ function Footer() {
                 <p><a href='#link2'>Contacts</a></p>
                 </div>
                 <div className='footer__main-content'>
-                <p><a href='#link3'>Pharmacy Directory</a></p>
+                <p><Link to="/directory">Pharmacy Directory</Link></p>
                 <p><a href='#link4'>Med Availability Search</a></p>
                 </div>
             </div>
@@ -20,7 +22,7 @@ function Footer() {
                     <div className='logo'>
                         <p>logo</p>
                     </div>
-                    <p>c2024 health Link</p>
+                    <p className='copyright'><FaCopyright /><span>2024 health Link</span></p>
                 </div>
             </div>
         </div>

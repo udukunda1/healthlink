@@ -39,3 +39,12 @@
     display: flex;
     justify-content: space-between;
 }
+
+.footer .copyright{
+    display: flex;
+    align-items: center;
+}
+
+.footer span {
+    padding-left: 0.3rem;
+}

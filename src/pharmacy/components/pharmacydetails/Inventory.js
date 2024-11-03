@@ -5,11 +5,17 @@ import './Inventory.css';
 
 function Inventory({lastUpdated, medicines}) {
 
+    if(medicines.length === 0){
+        return (
+            <h3 style={{ padding: '0 6rem'}}>no medicines yet</h3>
+        )
+    }
+
     return (
         <div className='Inventory'>
         <h3>Last updated at {lastUpdated}</h3>
         <ul>
-            {medicines.map(medicine => <li><FaCheckCircle /> <span>{medicine}</span></li>)}
+            {medicines.map(medicine => <li key={medicine}><FaCheckCircle /> <span>{medicine}</span></li>)}
         </ul>
 </div>
     )

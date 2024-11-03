@@ -7,7 +7,7 @@ function Directory(){
         <>
         <ImageHolder2 />
         <section className='pharmacies'>
-            <h1> Pharmacy Directory.</h1>
+            <h1>Pharmacy Directory.</h1>
             <PharmacyItemsDirectory />
          </section>
         </>

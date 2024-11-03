@@ -235,5 +235,19 @@ export const pharmacies = [
                 content: '"The staff are always friendly and attentive!"'
             }
         ]
+    },
+    {
+        id: '6',
+        image: pharma2,
+        title: 'new generation',
+        address: 'kabuga',
+        tel: '+250788990376',
+        workingHours: 'always',
+        avairableServises: [],
+        inventory: {
+            updatedAt: '28/3/2023',
+            medicines: []
+        },
+        studentsReviews: []
     }
 ];

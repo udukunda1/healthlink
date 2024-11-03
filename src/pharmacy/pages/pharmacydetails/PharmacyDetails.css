@@ -10,12 +10,13 @@
 
 .pharmacy-details__head {
     grid-area: head;
-    text-align: center;
-    margin: 1rem 0;
+    padding: 1rem;
+    display: flex;
 }
 
 .pharmacy-details__head h1 {
     color: #0e4f1f;
+    margin: 0 auto;
 }
 
 .pharmacy-details__map {
