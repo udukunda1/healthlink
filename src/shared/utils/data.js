@@ -10,7 +10,7 @@ export const pharmacies = [
         id: '1',
         image: pharma1,
         title: 'Kigali Pharma',
-        address: '24/7 Kigali Nyarugenge Town',
+        address: 'Kigali Nyarugenge Town',
         tel: '+250780058709',
         workingHours: '24/7',
         avairableServises: [
@@ -22,7 +22,7 @@ export const pharmacies = [
             "Automated Refill Reminders"
         ],
         inventory: {
-            updatedAt: '25/4/2024',
+            updatedAt: '21/4/2024',
             medicines: [
                 "Aspirin",
                 "Ibuprofen",
@@ -58,7 +58,7 @@ export const pharmacies = [
         id: '2',
         image: pharma2,
         title: 'Mediasol',
-        address: '24/7 Musanze Branch',
+        address: 'Musanze Branch',
         tel: '+250788000001',
         workingHours: '24/7',
         avairableServises: [
@@ -70,7 +70,7 @@ export const pharmacies = [
             "Nutritional Counseling"
         ],
         inventory: {
-            updatedAt: '25/4/2024',
+            updatedAt: '15/4/2024',
             medicines: [
                 "Aspirin",
                 "Ibuprofen",
@@ -101,7 +101,7 @@ export const pharmacies = [
         id: '3',
         image: pharma3,
         title: 'Salus Pharmacy',
-        address: '20/Day Kigali Kicukiro Town',
+        address: 'Kigali Kicukiro Town',
         tel: '+250788000002',
         workingHours: '24/7',
         avairableServises: [
@@ -113,7 +113,7 @@ export const pharmacies = [
             "Wellness Programs"
         ],
         inventory: {
-            updatedAt: '25/4/2024',
+            updatedAt: '11/4/2024',
             medicines: [
                 "Aspirin",
                 "Ibuprofen",
@@ -144,7 +144,7 @@ export const pharmacies = [
         id: '4',
         image: pharma1,
         title: 'Optica Pharma',
-        address: '24/7 Kigali SilverBack Mall',
+        address: 'Kigali SilverBack Mall',
         tel: '+250788000003',
         workingHours: '24/7',
         avairableServises: [
@@ -156,7 +156,7 @@ export const pharmacies = [
             "Sunglasses"
         ],
         inventory: {
-            updatedAt: '25/4/2024',
+            updatedAt: '30/10/2024',
             medicines: [
                 "Aspirin",
                 "Ibuprofen",
@@ -187,7 +187,7 @@ export const pharmacies = [
         id: '5',
         image: pharma2,
         title: 'Kisimenti Health',
-        address: '24/7 It\'s Lit Out There',
+        address: 'It\'s Lit Out There',
         tel: '+250788000004',
         workingHours: '24/7',
         avairableServises: [
@@ -199,7 +199,7 @@ export const pharmacies = [
             "Medication Refills"
         ],
         inventory: {
-            updatedAt: '25/4/2024',
+            updatedAt: '28/3/2023',
             medicines: [
                 "Aspirin",
                 "Ibuprofen",

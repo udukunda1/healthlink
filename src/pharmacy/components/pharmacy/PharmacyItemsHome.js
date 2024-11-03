@@ -20,7 +20,7 @@ function PharmacyItemsHome() {
 
     return(
         <div className='PharmacyItemsHome'>
-        {featured.map(pharmacy => <PharmacyItem key={pharmacy.id} image={pharmacy.image} title={pharmacy.title} content={pharmacy.address} />)}
+        {featured.map(pharmacy => <PharmacyItem key={pharmacy.id} id={pharmacy.id} image={pharmacy.image} title={pharmacy.title} content={pharmacy.address} />)}
         <Button onClick={navigateHandler}>See More</Button>
         </div>
         )
