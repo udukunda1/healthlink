@@ -1,7 +1,7 @@
-import PharmacyItem from '../../components/pharmacy/PharmacyItem';
 import SearchableList from '../../components/search/SearcheableList';
 import './AvailabilitySearch.css';
 import { pharmacies } from '../../../shared/utils/data';
+import SearchItem from '../../components/pharmacy/SearchItem';
 
 function AvailabilitySearch(){
 
@@ -12,7 +12,7 @@ function AvailabilitySearch(){
         <h1>Check Availability</h1>
         <div>
         <SearchableList items={pharmacies} itemKeyFn={(item) => item.id}>
-          {(item) => <PharmacyItem title={item.title} content={item.content} image={item.image} id={item.id} />}
+          {(item) => <SearchItem title={item.title} address={item.address} image={item.image} time={item.workingHours} meds={item.inventory.medicines.slice(0, 3)} id={item.id} />}
         </SearchableList>
         </div>
         </div>

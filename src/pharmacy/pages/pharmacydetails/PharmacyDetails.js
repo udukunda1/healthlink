@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Button from '../../../shared/components/UI/Button/Button';
 import Details from '../../components/pharmacydetails/Details';
 import Inventory from '../../components/pharmacydetails/Inventory';
@@ -11,6 +11,7 @@ import { IoCaretBackCircle } from 'react-icons/io5';
 
 function PharmacyDetails() {
 
+    let navigate = useNavigate();
     let { pharmacyId } = useParams();
     const pharmacy = pharmacies.find(pharma => pharma.id === pharmacyId);
 
@@ -19,7 +20,7 @@ function PharmacyDetails() {
         <div className='rem3-top-place-holder'></div>
         <div className='pharmacy-details'>
             <div className='pharmacy-details__head'>
-                <Link to="/directory" ><Button><IoCaretBackCircle /> Back</Button></Link>
+                <Button onClick={() => navigate(-1)}><IoCaretBackCircle /> Back</Button>
                 <h1>{pharmacy.title}</h1>
             </div>
             <div className='pharmacy-details__map'>
