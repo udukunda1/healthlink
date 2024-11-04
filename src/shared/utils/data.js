@@ -4,6 +4,10 @@ import pharma3 from '../../image/pharma3.png';
 import obed from '../../image/obed.jpeg';
 import cynthia from '../../image/cynthia.jpeg';
 import silas from '../../image/silas.jpeg';
+import optica from '../../image/optica.png';
+import goodlife from '../../image/goodlife.png';
+import lotus from '../../image/lotus.png';
+import ketie from '../../image/ketie.png';
 
 export const pharmacies = [
     {
@@ -127,7 +131,7 @@ export const pharmacies = [
     },
     {
         id: '4',
-        image: pharma1,
+        image: optica,
         title: 'Optica Pharma',
         address: 'Kigali SilverBack Mall',
         tel: '+250788000003',
@@ -165,8 +169,8 @@ export const pharmacies = [
     },
     {
         id: '5',
-        image: pharma2,
-        title: 'Kisimenti Health',
+        image: goodlife,
+        title: 'Good Life',
         address: 'It\'s Lit Out There',
         tel: '+250788000004',
         workingHours: '24/7',
@@ -213,8 +217,8 @@ export const pharmacies = [
     },
     {
         id: '6',
-        image: pharma2,
-        title: 'New Generation',
+        image: lotus,
+        title: 'Lotus Medical Group',
         address: 'Kabuga',
         tel: '+250788990376',
         workingHours: 'Always',
@@ -224,5 +228,38 @@ export const pharmacies = [
             medicines: []
         },
         studentsReviews: []
+    },
+    {
+        id: '7',
+        image: ketie,
+        title: 'Ketty\'s Health Hub',
+        address: 'Kabeza KGL',
+        tel: '+250788990376',
+        workingHours: '7am - 7pm',
+        avairableServises: [
+            "Health Screenings",
+            "Nutritional Counseling",
+            "Vaccination Services",
+            "Chronic Disease Management",
+            "Wellness Programs",
+            "Medication Refills"
+        ],
+        inventory: {
+            updatedAt: '20/1/2023',
+            medicines: [
+                "paracetamol",
+                "ongera",
+                "Amox",
+                "pametin",
+                "Aspirin"
+            ]
+        },
+        studentsReviews: [
+            {
+                image: obed,
+                name: 'Mutony melinda',
+                content: '"Poor service don\'t go there!"'
+            }
+        ]
     }
 ];

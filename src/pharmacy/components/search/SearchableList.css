@@ -33,6 +33,10 @@
     justify-content: space-evenly;
   }
 
+  .conten-after-typing span {
+    color: #123b1c;
+  }
+
   .conten-after-typing h2 {
     padding-top: 1rem;
     color: #0e4f1f;

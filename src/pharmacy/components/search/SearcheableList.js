@@ -25,7 +25,7 @@ function SearchableList({ items, itemKeyFn, children }) {
       </div>
       :
       <div className='conten-after-typing'>
-      <h2>Items Matching Your Search</h2>
+      <h2>Items Matching Your Search: <span>{searchResults.length}</span></h2>
       <ul>
         {searchResults.map((item) => (
           <li key={itemKeyFn(item)}>

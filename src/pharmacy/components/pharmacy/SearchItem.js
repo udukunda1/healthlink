@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import './SearchItem.css';
 import { MdMedication } from 'react-icons/md';
-// import obed from '../../../image/obed.jpeg'
 
 function SearchItem({title, address, image, time, meds, id}) {
     return(
@@ -14,13 +13,16 @@ function SearchItem({title, address, image, time, meds, id}) {
                 <h3>{title}</h3>
                 <div className='search-item-card__content--time-and-address'>
                 <p>{address}</p>
-                <p>{time}</p>
+                <p>{'-'}{time}</p>
                 </div>
                 <h4>Available Meds:</h4>
+                {meds.length === 0? <p>Unavailable at the moment!</p>
+                :
                 <ul>
                     {meds.map(med => <li><MdMedication />{med}</li>)}
                     <li className='others'>and others</li>
                 </ul>
+                }
             </div>
         </div>
         </Link>
