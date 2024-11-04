@@ -4,7 +4,7 @@
 }
 
 .img__bg {
-    background: linear-gradient(to right, transparent, rgba(14,79,31,0.3)), url('../../../image/image.jpg');
+    background: url('../../../image/image.jpg'); /*linear-gradient(to right, transparent, transparent),*/
     width: 100%;
     height: 70vh;
     background-size: cover;
