@@ -24,7 +24,7 @@
 
   .img__bg--item-title {
     padding: 1rem 3rem;
-    color: #0e4f1f;
+    color: var(--dark-green);
     margin-left: 2rem;
     font-weight: bold;
   }

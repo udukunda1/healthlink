@@ -1,8 +1,8 @@
 .ui-button {
-    background: #0e4f1f;
+    background: var(--dark-green);
     color: white;
     font: inherit;
-    border: 1.5px solid #0e4f1f;
+    border: 1.5px solid var(--dark-green);
     padding: 8px;
     border-radius: 8px;
     font-weight: bold;
@@ -13,13 +13,13 @@
 
 .ui-button:hover {
     background: white;
-    color: #0e4f1f;
-    border: 2px solid #0e4f1f; /* Change border color on hover */
+    color: var(--dark-green);
+    border: 2px solid var(--dark-green); /* Change border color on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .ui-button:active {
-    background: #0e4f1f;
+    background: var(--dark-green);
     color: white;
 }
 
@@ -44,13 +44,13 @@
 /*by default it is cta-blue which follows btn styling*/
 .cta-white {
     background: white;
-    color: #0e4f1f !important;
+    color: var(--dark-green) !important;
     display: inline-block;
     text-decoration: none;
 }
 
 .cta-white:hover {
-    background: #0e4f1f; /* Change background on hover */
+    background: var(--dark-green); /* Change background on hover */
     color: white !important; /* Change text color on hover */
     border: 2px solid white ; /* Change border color on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
@@ -58,5 +58,5 @@
 
 .cta-white:active {
     background: white;
-    color: #0e4f1f !important;
+    color: var(--dark-green) !important;
 }

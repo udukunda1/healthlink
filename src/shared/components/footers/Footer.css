@@ -1,6 +1,6 @@
 .footer {
     height: 30vh;
-    background: #0e4f1f;
+    background: var(--dark-green);
     color: white;
     padding: 2rem 4rem;
     display: flex;
@@ -25,7 +25,7 @@
 }
 
 .footer__main-contents a:active {
-    color: #0e4f1f;
+    color: var(--dark-green);
     background: white;
 }
 

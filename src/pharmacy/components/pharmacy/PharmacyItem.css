@@ -14,7 +14,7 @@
 }
 
 .pharmacy-card a{
-    color: rgb(14,79,31);
+    color: var(--dark-green);
     text-decoration: none;
 }
 
@@ -42,6 +42,6 @@
 }
 
 .pharmacy-card__content h2 {
-    color: rgb(14,79,31);
+    color: var(--dark-green);
     padding-bottom: 0.3rem;
 }

@@ -1,6 +1,5 @@
 dialog {
     background: white;
-    /* border-radius: 0 0 20px 20px; */
     position: fixed;
     top: 30vh;
     left: 35vw;
@@ -9,7 +8,7 @@ dialog {
     padding: 0 !important;
   }
   .place-holder {
-    background: #0e4f1f;
+    background: var(--dark-green);
     height: 2rem;
     width: 100%;
     text-align: center;

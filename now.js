@@ -1,6 +1,3 @@
-function me() {
-    return 'hello';
-}
 
 let a = 0;
 

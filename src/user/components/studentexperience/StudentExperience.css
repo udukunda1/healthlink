@@ -4,6 +4,6 @@
 }
 
 .student-experience {
-    border: 1px solid #0e4f1f;
+    border: 1px solid var(--dark-green);
     padding: 2rem;
 }

@@ -1,6 +1,5 @@
 
 .searchable-list {
-    /* background: blueviolet; */
     width: 70vw;
     min-height: 70vh;
 }
@@ -12,20 +11,18 @@
 .searchable-list input {
     width: 70%;
     padding: 0.75rem;
-    border: 1px solid #0e4f1f;
+    border: 1px solid var(--dark-green);
     border-radius: 6px;
-    /* background-color: #0e4f1f; */
-    color: #0e4f1f;
+    color: var(--dark-green);
     font: inherit;
   }
 
   .searchable-list input:focus {
     outline: none;
-    border: 2px solid #0e4f1f;
+    border: 2px solid var(--dark-green);
   }
 
   .content-before-typing {
-    /* background: #0e4f1f; */
     height: 60vh;
     display: flex;
     flex-direction: column;
@@ -34,10 +31,10 @@
   }
 
   .conten-after-typing span {
-    color: #123b1c;
+    color: var(--dark-green);
   }
 
   .conten-after-typing h2 {
     padding-top: 1rem;
-    color: #0e4f1f;
+    color: var(--dark-green);
   }

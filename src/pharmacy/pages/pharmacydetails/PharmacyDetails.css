@@ -15,12 +15,11 @@
 }
 
 .pharmacy-details__head h1 {
-    color: #0e4f1f;
+    color: var(--dark-green);
     margin: 0 auto;
 }
 
 .pharmacy-details__map {
-    /* background: rgb(185, 165, 165); */
     grid-area: map;
     height: 30vh;
     text-align: center;
@@ -49,11 +48,10 @@
 
 .pharmacy-details__inventory h2 {
     padding-bottom: 1rem;
-    color: #0e4f1f;
+    color: var(--dark-green);
 }
 
 .pharmacy-details__inventory .buttons {
-    /* background: rebeccapurple; */
     height: 5rem;
     width: 80%;
     display: flex;
@@ -62,12 +60,11 @@
 }
 
 .pharmacy-details__reviews {
-    /* background: rgba(118, 107, 182, 0.558); */
     grid-area: reviews;
     width: 40vw;
 }
 
 .pharmacy-details__reviews h2 {
     text-align: center;
-    color: #0e4f1f;
+    color: var(--dark-green);
 }

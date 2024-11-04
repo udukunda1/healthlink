@@ -7,6 +7,6 @@
 }
 
 .availability-search > h1 {
-    color: #0e4f1f;
+    color: var(--dark-green);
     padding: 1rem 0;
 }

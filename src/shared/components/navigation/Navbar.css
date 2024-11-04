@@ -1,5 +1,5 @@
 .nav {
-    background: #0e4f1f;
+    background: var(--dark-green);
     width: 100%;
     position: fixed;
 }
