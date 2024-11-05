@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 import ImageHolder from '../../components/imageholder1/ImageHolder1';
 import Button from "../../../shared/components/UI/Button/Button";
@@ -7,7 +7,7 @@ import useOpenModal from "../../../shared/hooks/useOpenModal";
 import './Home.css';
 import StudentExperience from '../../components/studentexperience/StudentExperience';
 import PharmacyItemsHome from '../../../pharmacy/components/pharmacy/PharmacyItemsHome';
-// import { ChakraProvider } from '@chakra-ui/react';
+
 
 function Home() {
     const [modalRef, openModal] = useOpenModal();
@@ -22,7 +22,7 @@ function Home() {
       <div className='cta-findmedicine'>
       <h1 className='cta-findmedicine__text'>Find Specific medicines in Real time</h1>
       <div className='cta-findmedicine__button'>
-      <Button onClick={openModal}>Find</Button>
+      <Link to="/search"><Button>Find</Button></Link>
       </div>
       </div>
       <StudentExperience />
