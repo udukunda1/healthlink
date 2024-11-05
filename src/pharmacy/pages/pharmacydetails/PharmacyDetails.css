@@ -68,3 +68,20 @@
     text-align: center;
     color: var(--dark-green);
 }
+
+.pharmacy-details textarea {
+    margin: 2rem 0;
+    width: 100%;
+    margin: 1rem 0;
+    /* height: 2rem; */
+    outline: none;
+    font-family: inherit;
+    font-size: medium;
+    border: 2px solid var(--dark-green);
+    border-radius: 3px;
+    box-shadow: 0 0 2px var(--dark-green);
+}
+
+.pharmacy-details textarea:focus {
+    box-shadow: 0 0 5px var(--dark-green);
+}
