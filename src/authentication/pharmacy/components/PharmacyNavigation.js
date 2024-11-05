@@ -8,7 +8,7 @@ function PharmacyNavigation() {
     return (
         <div className="pharmacy-navigation">
         <Link to='/authenticate/pharmacy/'><Button type='a' className="cta-white">login</Button></Link>
-        <Link to='/authenticate/pharmacy/signup'><Button type='a' className="cta-white">Signup</Button></Link>
+        <Link to='/authenticate/pharmacy/signup'><Button type='a' className="cta-white">Register</Button></Link>
         </div>
     )
 }
