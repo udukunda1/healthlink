@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 import './SearchItem.css';
 import { MdMedication } from 'react-icons/md';
+import { motion } from 'framer-motion';
 
 function SearchItem({title, address, image, time, meds, id}) {
     return(
         <Link to={`/directory/details/${id}`} className='search-item-card__link' >
-        <div className='search-item-card'>
+        <motion.div
+         className='search-item-card'
+         whileHover={{scale: 1.01}}
+         transition={{type: 'spring', stiffness: 500}}
+         >
             <div className='search-item-card__image'>
                 <img src={image} alt='img' />
             </div>
@@ -24,7 +29,7 @@ function SearchItem({title, address, image, time, meds, id}) {
                 </ul>
                 }
             </div>
-        </div>
+        </motion.div>
         </Link>
     )
 }

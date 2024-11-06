@@ -1,4 +1,5 @@
 import './Button.css';
+import { motion } from 'framer-motion';
 
 //className='cta-white'|| 'button(default)' || 'red';
 
@@ -6,24 +7,39 @@ function Button({children , type='button', className = '',...props}){
 
     if(type === 'a'){
         return (
-        <a className={`ui-button ${className??null}`} {...props}>
+        <motion.a
+         className={`ui-button ${className??null}`}
+         {...props}
+         whileHover={{scale: 1.02}}
+         transition={{type: 'spring', stiffness: 500}}
+         >
             {children}
-        </a>
+        </motion.a>
         )
     }
 
     if(type === 'red'){
         return (
-            <button className={`ui-button ${className}`} {...props}>
+            <motion.button
+             className={`ui-button ${className}`}
+              {...props}
+              whileHover={{scale: 1.02}}
+              transition={{type: 'spring', stiffness: 500}}
+              >
                 {children}
-            </button>
+            </motion.button>
             )
     }
 
     return (
-        <button className='ui-button' {...props}>
+        <motion.button
+         className='ui-button'
+         {...props}
+         whileHover={{scale: 1.02}}
+         transition={{type: 'spring', stiffness: 500}}
+         >
             {children}
-        </button>
+        </motion.button>
     )
 }
 
