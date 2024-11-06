@@ -1,6 +1,7 @@
 
 import { Link, NavLink } from 'react-router-dom';
 import Button from '../UI/Button/Button';
+// import { motion } from 'framer-motion';
 import './Navbar.css';
 
 function Navbar() {
