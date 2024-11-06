@@ -22,7 +22,7 @@ function PharmacyDetails() {
     const pharmacy = pharmacies.find(pharma => pharma.id === pharmacyId);
 
     function handleLogin(){
-        navig('/authenticate/student');
+        navig('/authenticate/student/');
     }
 
     return(

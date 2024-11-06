@@ -16,6 +16,7 @@
     background: white;
     border: 3px solid var(--dark-green);
     color: var(--dark-green);
+    cursor: pointer;
 }
 
 .authenticate-navigation .active button {
