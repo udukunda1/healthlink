@@ -1,5 +1,5 @@
 import express from 'express';
-import usersRoutes from './routes/users-routes.js';
+import pharmaRoutes from './routes/pharmacy-routes.js';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 const app = express();
 app.use(bodyParser.json());
 
-app.use('/', usersRoutes);
+app.use('/pharma', pharmaRoutes);
 
 
 mongoose.connect(`mongodb+srv://boy:1235@cluster0.kdnd2.mongodb.net/healthlink`)
