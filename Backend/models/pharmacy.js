@@ -13,7 +13,7 @@ const pharmacySchema = new Schema({
     avairableServices: [{type: String}],
     inventory: [{updatedAt: {type: String}, medicines: [{type: String}]}],
     password: {type: String, required: true},
-    studentReviews: [{image: {type: String}, name: {type: String}, content: {type: String}}]
+    studentReviews: [{uid: {type: mongoose.Types.ObjectId, ref: 'User'}, content: {type: String}}]
     // studentReviews: [{type: mongoose.Types.ObjectId, ref: 'User'}]
 })
 
