@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import './App.css';
-import Home from "./user/pages/home/Home";
+import Home, { loader } from "./user/pages/home/Home";
 import RootLayout from './user/pages/RootLayout';
 import Directory from './pharmacy/pages/directory/Directory';
 import ErrorPage from './user/pages/errorpage/ErrorPage';
-import PharmacyDetails from './pharmacy/pages/pharmacydetails/PharmacyDetails';
+import PharmacyDetails, { ploader } from './pharmacy/pages/pharmacydetails/PharmacyDetails';
 import AvailabilitySearch from './pharmacy/pages/availabilitysearch/AvailabilitySearch';
 import PharmaDashBoard from './pharmacy/pages/dashboard/PharmaDashBoard';
 import StudentLayout from './authentication/user/StudentLayout';
@@ -22,9 +22,9 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
-      {path: '', element: <Home />},
-      {path: 'directory', element: <Directory />},
-      {path: 'directory/details/:pharmacyId', element: <PharmacyDetails />},
+      {path: '', element: <Home />, loader: loader},
+      {path: 'directory', element: <Directory />, loader: loader},
+      {path: 'directory/details/:pharmacyId', element: <PharmacyDetails />, loader: ploader},
       {path: 'search', element: <AvailabilitySearch />},
       {
         path: 'authenticate',

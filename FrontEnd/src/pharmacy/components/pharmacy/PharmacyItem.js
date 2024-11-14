@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import './PharmacyItem.css';
 import { motion } from 'framer-motion';
-// import obed from '../../../image/obed.jpeg'
+
 
 function PharmacyItem({title, content, image, id}) {
+
     return(
 
         <motion.div
@@ -13,7 +14,7 @@ function PharmacyItem({title, content, image, id}) {
         >
             <Link to={`/directory/details/${id}`} >
             <div className='pharmacy-card__image'>
-                <img src={image} alt='img' />
+                <img src={`http://localhost:5000/uploads/images/${image}`} alt='img' />
             </div>
             <div className='pharmacy-card__content'>
                 <h2>{title}</h2>

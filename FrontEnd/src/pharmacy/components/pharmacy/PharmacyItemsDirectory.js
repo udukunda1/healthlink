@@ -1,11 +1,11 @@
+import { useLoaderData } from 'react-router-dom';
+
 import PharmacyItem from './PharmacyItem';
 import './PharmacyItemsDirectory.css';
 
 
-import { pharmacies } from '../../../shared/utils/data';
-
 function PharmacyItemsDirectory(){
-
+    const { pharmacies } = useLoaderData()
 
     return(
         <div className='PharmacyItemsDirectory'>

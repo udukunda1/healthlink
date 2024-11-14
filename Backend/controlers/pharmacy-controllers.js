@@ -8,10 +8,11 @@ export const GetPharmacies = async (req, res, next) => {
         let pharmacies = await pharmacy.find({}, '-password').populate('studentReviews.uid', '-password');
 
         res.json({ pharmacies: pharmacies.map(pharmacy => pharmacy.toObject({ getters: true })) });
+        // res.status(400).json({err: 'failed'});
 
     }
     catch(err) {
-        res.json({err: err})
+        res.status(400).json({err: 'failed'});
     }
 }
 
@@ -22,13 +23,13 @@ export const GetPharmacy = async (req, res, next) => {
         let pharma = await pharmacy.findById(pid);
 
     if(pharma.length == 0){
-        res.json({message: 'pharmacy not found!'})
+        res.status(400).json({err: 'pharmacy not found!'})
     }
     res.json({pharmacy: pharma.toObject({ getters: true })})
     }
 
     catch(err){
-        res.json({message: 'error'})
+        res.status(400).json({err: 'error'})
         console.log(err);
     }
 }

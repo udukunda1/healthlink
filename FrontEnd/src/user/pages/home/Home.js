@@ -1,14 +1,26 @@
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 import ImageHolder from '../../components/imageholder1/ImageHolder1';
 import Button from "../../../shared/components/UI/Button/Button";
 import './Home.css';
 import StudentExperience from '../../components/studentexperience/StudentExperience';
 import PharmacyItemsHome from '../../../pharmacy/components/pharmacy/PharmacyItemsHome';
+import Modal from '../../../shared/components/UI/Modal/modal';
+
 
 
 function Home() {
+  const response = useLoaderData();
 
+
+  if(response.error){
+
+    return (
+      <Modal  open>
+        {response.message}
+      </Modal>
+    )
+  }
 
    return (
       <>
@@ -35,3 +47,12 @@ function Home() {
 }
 
 export default Home;
+
+export async function loader() {
+  const response = await fetch('http://localhost:5000/pharma');
+  if(!response.ok){
+    return {error: true, message: 'failed to fetch from server'}
+  }
+
+  return response;
+}

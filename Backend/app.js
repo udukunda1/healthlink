@@ -1,14 +1,17 @@
 import express from 'express';
+import mongoose from 'mongoose';
+import path from 'path';
+
 import pharmaRoutes from './routes/pharmacy-routes.js';
 import userRoutes from './routes/users-routes.js';
 import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
 import pharmacy from './models/pharmacy.js';
 import user from './models/user.js';
 
 
 const app = express();
 app.use(bodyParser.json());
+app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -34,10 +37,10 @@ app.use((req, res, next) => {
 
 // app.use(async (req, res, next) => {
 //   const created = new pharmacy({
-//     image: 'jjdks',
-//     title: 'kings',
-//     address: ' home',
-//     number: 250780417509,
+//     image: 'ketie.png',
+//     title: 'pharma new',
+//     address: 'new home',
+//     number: 250790417509,
 //     workingHours: 'always',
 //     password: 'hashed'
 //   })

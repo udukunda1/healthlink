@@ -17,7 +17,7 @@ export const AddToFavorite = async (req, res, next) => {
     const exist = usr.favourite.find(elem => String(elem) === String(pharma.id));
 
     if(exist){
-        return res.json({message: 'aleady favourite'});
+        return res.status(400).json({err: 'aleady favourite'});
     }
 
     usr.favourite.push(pid);
@@ -25,7 +25,7 @@ export const AddToFavorite = async (req, res, next) => {
     res.json({message: 'done'});
     }
     catch(err) {
-        res.json({message: 'failed'});
+        res.status(400).json({err: 'failed'});
     }
 }
 
@@ -37,7 +37,7 @@ export const GetFavourite = async (req, res, next) => {
     res.json({favourite: usr.favourite.map(fav => fav.toObject({ getters: true }))});
     }
     catch {
-        res.json({message: 'failed'});
+        res.status(400).json({err: 'failed'});
     }
 }
 
@@ -51,7 +51,7 @@ export const DeleteFavourite = async (req, res, next) => {
         res.json({message: 'deleted'});
     }
     catch {
-        res.json({message: 'failed to delete'});
+        res.status(400).json({err: 'failed to delete'});
     }
 
 }
@@ -72,7 +72,7 @@ export const Rate = async (req, res, next) => {
 
     }
     catch(err) {
-        res.json({message: 'failed'});
+        res.status(400).json({err: 'failed'});
     }
 }
 
@@ -82,7 +82,7 @@ export const SignUp = async (req, res, next) => {
     try{
         let existingUser = await user.findOne({ email: email });
     if(existingUser){
-        return res.json({message: 'User exists already, please login instead.'});
+        return res.status(400).json({err: 'User exists already, please login instead.'});
     }
     const createdUser = new user({
         name,
@@ -99,7 +99,7 @@ export const SignUp = async (req, res, next) => {
             { expiresIn: '24h' })
     }
     catch(err){
-        console.log(err);
+        res.status(400).json({err: 'failed'})
     }
 
     await createdUser.save();
@@ -107,7 +107,7 @@ export const SignUp = async (req, res, next) => {
         res.json({name: createdUser.name, token});
     }
     catch {
-        res.json({message: 'failed, try again later'});
+        res.status(400).json({err: 'failed, try again later'});
     }
 }
 
@@ -117,7 +117,7 @@ export const Login = async (req, res, next) => {
     let usr = await user.findOne({ email: email });
     let isValid = password === usr.password;
     if(!isValid){
-        return res.json({message: 'invalid credentials!'});
+        return res.status(400).json({err: 'invalid credentials!'});
     }
 
     let token
@@ -128,7 +128,7 @@ export const Login = async (req, res, next) => {
             { expiresIn: '24h' })
     }
     catch(err){
-        console.log(err);
+        res.status(400).json({err: 'failed'});
     }
 
     res.json({name: usr.name, token});

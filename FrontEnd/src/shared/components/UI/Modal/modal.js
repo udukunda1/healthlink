@@ -27,6 +27,7 @@ const Modal = forwardRef(({children, addButton='', ...props}, ref) => {
      ref={a}
      initial={{opacity: 0, y: -30}}
      animate={{opacity: 1, y: 0}}
+     {...props}
      >
       <div className='place-holder'>
         <p className='place-holder__content'>Health Link</p>
