@@ -14,7 +14,6 @@ const pharmacySchema = new Schema({
     inventory: [{updatedAt: {type: String}, medicines: [{type: String}]}],
     password: {type: String, required: true},
     studentReviews: [{uid: {type: mongoose.Types.ObjectId, ref: 'User'}, content: {type: String}}]
-    // studentReviews: [{type: mongoose.Types.ObjectId, ref: 'User'}]
 })
 
 export default mongoose.model('Pharmacy', pharmacySchema);

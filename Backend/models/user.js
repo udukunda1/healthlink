@@ -10,7 +10,6 @@ const userSchema = new Schema({
     picture: {type: String, required: true},
     password: {type: String, required: true},
     favourite: [{type: mongoose.Types.ObjectId, ref: 'Pharmacy'}],
-    // reviews: [{id: {type: mongoose.Types.ObjectId, ref: 'Pharmacy'}, review: {type: String}}]
 })
 
 export default mongoose.model('User', userSchema);

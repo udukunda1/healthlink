@@ -1,0 +1,20 @@
+import jwt from 'jsonwebtoken';
+
+export default async (req, res, next) => {
+    if (req.method === 'OPTIONS') {
+        return next();
+      }
+
+      try {
+        const token = req.headers.authorization.split(' ')[1]; // Authorization: 'Bearer TOKEN'
+        if (!token) {
+          return res.status(403).json({message: 'authentication failed'});
+        }
+
+    const decodedToken = jwt.verify(token, 'supersecret_dont_share');
+    req.userId = decodedToken.userId ;
+    next();
+  } catch (err) {
+    res.status(403).json({message: 'authentication failed'})
+  }
+}

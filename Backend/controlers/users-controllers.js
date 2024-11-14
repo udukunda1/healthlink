@@ -1,12 +1,13 @@
 import pharmacy from "../models/pharmacy.js";
 import user from "../models/user.js";
+import jwt from 'jsonwebtoken';
 
 
 
 
 export const AddToFavorite = async (req, res, next) => {
     const {pid} = req.params;
-    const {uid} = req.body;
+    const uid = req.userId;
 
     try {
     const usr = await user.findById(uid);
@@ -29,7 +30,8 @@ export const AddToFavorite = async (req, res, next) => {
 }
 
 export const GetFavourite = async (req, res, next) => {
-    const {uid} = req.body;
+    const uid = req.userId;
+
     try{
     const usr = await user.findById(uid).populate('favourite', '-password');
     res.json({favourite: usr.favourite.map(fav => fav.toObject({ getters: true }))});
@@ -40,7 +42,7 @@ export const GetFavourite = async (req, res, next) => {
 }
 
 export const DeleteFavourite = async (req, res, next) => {
-    const {uid} = req.body;
+    const uid = req.userId;
     const {pid} = req.params;
     try {
         const usr = await user.findById(uid);
@@ -52,4 +54,82 @@ export const DeleteFavourite = async (req, res, next) => {
         res.json({message: 'failed to delete'});
     }
 
+}
+
+export const Rate = async (req, res, next) => {
+    const {review} = req.body;
+    const {pid} = req.params;
+    const uid = req.userId;
+
+    try {
+
+    await user.findById(uid);
+    const pharma = await pharmacy.findById(pid);
+    const rev = {uid, content: review};
+    pharma.studentReviews.push(rev);
+    await pharma.save();
+    res.json({message: 'done rate.'});
+
+    }
+    catch(err) {
+        res.json({message: 'failed'});
+    }
+}
+
+export const SignUp = async (req, res, next) => {
+    const {name, email, picture, password} = req.body;
+
+    try{
+        let existingUser = await user.findOne({ email: email });
+    if(existingUser){
+        return res.json({message: 'User exists already, please login instead.'});
+    }
+    const createdUser = new user({
+        name,
+        email,
+        picture,
+        password
+    });
+
+    let token
+    try{
+           token = jwt.sign(
+            { userId: createdUser.id },
+            'supersecret_dont_share',
+            { expiresIn: '24h' })
+    }
+    catch(err){
+        console.log(err);
+    }
+
+    await createdUser.save();
+
+        res.json({name: createdUser.name, token});
+    }
+    catch {
+        res.json({message: 'failed, try again later'});
+    }
+}
+
+
+export const Login = async (req, res, next) => {
+    const { email, password } = req.body;
+    let usr = await user.findOne({ email: email });
+    let isValid = password === usr.password;
+    if(!isValid){
+        return res.json({message: 'invalid credentials!'});
+    }
+
+    let token
+    try{
+           token = jwt.sign(
+            { userId: usr.id },
+            'supersecret_dont_share',
+            { expiresIn: '24h' })
+    }
+    catch(err){
+        console.log(err);
+    }
+
+    res.json({name: usr.name, token});
 }

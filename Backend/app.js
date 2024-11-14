@@ -21,23 +21,23 @@ app.use((req, res, next) => {
     next();
   });
 
-// app.use((req, res, next) => {
+// app.use(async (req, res, next) => {
 //   const created = new user({
 //     name: 'patrick',
 //     email: 'rumpatr048@gmail.com',
 //     picture: 'hdhhdh',
 //     password: 'hashed',
 //   })
-//   created.save();
+//   await created.save();
 //   res.json({message: 'user created'});
 // })
 
 // app.use(async (req, res, next) => {
 //   const created = new pharmacy({
-//     image: 'hwlll',
-//     title: 'my title',
-//     address: 'new home',
-//     number: 250790417504,
+//     image: 'jjdks',
+//     title: 'kings',
+//     address: ' home',
+//     number: 250780417509,
 //     workingHours: 'always',
 //     password: 'hashed'
 //   })

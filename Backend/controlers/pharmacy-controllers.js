@@ -4,24 +4,22 @@ import pharmacy from "../models/pharmacy.js";
 
 export const GetPharmacies = async (req, res, next) => {
 
-    let pharmacies;
     try {
-        pharmacies = await pharmacy.find();
+        let pharmacies = await pharmacy.find({}, '-password').populate('studentReviews.uid', '-password');
 
         res.json({ pharmacies: pharmacies.map(pharmacy => pharmacy.toObject({ getters: true })) });
+
     }
     catch(err) {
-        res.json({err})
+        res.json({err: err})
     }
 }
 
 export const GetPharmacy = async (req, res, next) => {
-    const pharmacyId = req.params.pid;
-
-    let pharma;
+    const {pid} = req.params;
 
     try{
-        pharma = await pharmacy.findById(pharmacyId);
+        let pharma = await pharmacy.findById(pid);
 
     if(pharma.length == 0){
         res.json({message: 'pharmacy not found!'})
