@@ -15,6 +15,8 @@ import StudentSignUp from './authentication/user/pages/StudentSignUp';
 import PharmacyLayout from './authentication/pharmacy/PharmacyLayout';
 import PharmacyLogin from './authentication/pharmacy/pages/PharmacyLogin';
 import PharmacySignUp from './authentication/pharmacy/pages/PharmacySignUp';
+import { authContext } from './shared/context/auth-context';
+import { useState } from 'react';
 
 const router = createBrowserRouter([
   {
@@ -58,7 +60,22 @@ const router = createBrowserRouter([
 
 
 function App() {
-  return <RouterProvider router={router} />
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  function login(){
+    setIsLoggedIn(true);
+  }
+  function logout(){
+    setIsLoggedIn(false);
+  }
+
+  return (
+    <>
+  <authContext.Provider value={{isLoggedIn, login, logout}}>
+  <RouterProvider router={router} />
+  </authContext.Provider>
+  </>
+  )
 }
 
 export default App;

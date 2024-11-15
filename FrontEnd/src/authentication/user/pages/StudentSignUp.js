@@ -1,3 +1,4 @@
+import { Form } from "react-router-dom";
 import Button from "../../../shared/components/UI/Button/Button";
 import './StudentSignUp.css';
 
@@ -6,7 +7,7 @@ function StudentSignUp(){
     return (
         <div className="student-signup">
         <h1>student SignUp</h1>
-        <form>
+        <Form>
             <label htmlFor='name'>Name</label>
             <input type="text" id="name" required />
             <label htmlFor='email'>Email</label>
@@ -18,7 +19,7 @@ function StudentSignUp(){
             <label htmlFor='confirmpassword'>Confirm Password</label>
             <input type="password" id="confirmPassword" required />
             <Button type='submit' id="button">SignUp</Button>
-        </form>
+        </Form>
         </div>
     )
 }

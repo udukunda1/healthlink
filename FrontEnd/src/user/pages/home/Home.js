@@ -11,7 +11,6 @@ import { Suspense, useEffect } from 'react';
 import LoadingSpinner from '../../../shared/components/UI/loadingspinner/LoadingSpinner';
 
 
-
 function Home() {
   const response = useLoaderData();
   const navigation = useNavigation();

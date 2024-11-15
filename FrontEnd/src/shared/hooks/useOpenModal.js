@@ -1,12 +1,12 @@
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 
 
 function useOpenModal() {
     const modalRef = useRef();
 
-    function openModal() {
+    const openModal = useCallback(()=> {
       modalRef.current.open(); // Calls handleOpen in the Modal component
-    }
+    },[]);
 
     return [modalRef, openModal]
 }
