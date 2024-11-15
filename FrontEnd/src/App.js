@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Home, { loader } from "./user/pages/home/Home";
 import RootLayout from './user/pages/RootLayout';
-import Directory from './pharmacy/pages/directory/Directory';
+import Directory, { dloader } from './pharmacy/pages/directory/Directory';
 import ErrorPage from './user/pages/errorpage/ErrorPage';
 import PharmacyDetails, { ploader } from './pharmacy/pages/pharmacydetails/PharmacyDetails';
 import AvailabilitySearch from './pharmacy/pages/availabilitysearch/AvailabilitySearch';
@@ -23,9 +23,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {path: '', element: <Home />, loader: loader},
-      {path: 'directory', element: <Directory />, loader: loader},
+      {path: 'directory', element: <Directory />, loader: dloader},
       {path: 'directory/details/:pharmacyId', element: <PharmacyDetails />, loader: ploader},
-      {path: 'search', element: <AvailabilitySearch />},
+      {path: 'search', element: <AvailabilitySearch />, loader: dloader},
       {
         path: 'authenticate',
         element: <AuthenticateLayout />,

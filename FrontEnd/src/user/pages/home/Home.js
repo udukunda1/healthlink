@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from 'react-router-dom';
+import { Await, defer, Link, useLoaderData, useNavigation } from 'react-router-dom';
 
 import ImageHolder from '../../components/imageholder1/ImageHolder1';
 import Button from "../../../shared/components/UI/Button/Button";
@@ -6,24 +6,37 @@ import './Home.css';
 import StudentExperience from '../../components/studentexperience/StudentExperience';
 import PharmacyItemsHome from '../../../pharmacy/components/pharmacy/PharmacyItemsHome';
 import Modal from '../../../shared/components/UI/Modal/modal';
+import useOpenModal from '../../../shared/hooks/useOpenModal';
+import { Suspense, useEffect } from 'react';
+import LoadingSpinner from '../../../shared/components/UI/loadingspinner/LoadingSpinner';
 
 
 
 function Home() {
   const response = useLoaderData();
+  const navigation = useNavigation();
+  const [modalRef, openModal] = useOpenModal();
 
+  useEffect(() => {
+    if(response.error){
+      openModal();
+    }
+  }, [response.error, openModal])
 
   if(response.error){
 
     return (
-      <Modal  open>
+      <>
+      <Modal  ref={modalRef}>
         {response.message}
       </Modal>
+      </>
     )
   }
 
    return (
-      <>
+      <div>
+      {navigation.state === 'loading' && <LoadingSpinner asOverlay />}
       <ImageHolder />
       <div className='cta-findmedicine'>
       <h1 className='cta-findmedicine__text'>Find Specific medicines in Real time</h1>
@@ -40,19 +53,35 @@ function Home() {
       </div>
       <section className='featured-pharmacies'>
         <h1>Featuted Pharmacies.</h1>
-      <PharmacyItemsHome />
+        <Suspense fallback={<LoadingSpinner asOverlay />}>
+        <Await resolve={response.pharmas}>
+        {(loadedPharmas) => <PharmacyItemsHome pharmas={loadedPharmas} />}
+        </Await>
+        </Suspense>
       </section>
-      </>
+      </div>
     );
 }
 
 export default Home;
 
-export async function loader() {
-  const response = await fetch('http://localhost:5000/pharma');
+async function loadpharma() {
+  try{
+    const response = await fetch('http://localhost:5000/pharma');
   if(!response.ok){
     return {error: true, message: 'failed to fetch from server'}
   }
 
-  return response;
+  const resData = await response.json();
+  return resData;
+  }
+  catch {
+    return {error: true, message: 'server is down now can not fetch'}
+  }
+}
+
+export function loader() {
+  return defer({
+    pharmas: loadpharma()
+  })
 }

@@ -1,12 +1,13 @@
 import './PharmacyItemsHome.css';
 import PharmacyItem from './PharmacyItem';
 import Button from '../../../shared/components/UI/Button/Button';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
-function PharmacyItemsHome() {
-    const { pharmacies } = useLoaderData();
+function PharmacyItemsHome({pharmas}) {
+
+    let { pharmacies } = pharmas;
 
     const featured = pharmacies.slice(0, 3);
 

@@ -12,7 +12,7 @@ function SearchItem({title, address, image, time, meds, id}) {
          transition={{type: 'spring', stiffness: 500}}
          >
             <div className='search-item-card__image'>
-                <img src={image} alt='img' />
+                <img src={`http://localhost:5000/uploads/images/${image}`} alt='img' />
             </div>
             <div className='search-item-card__content'>
                 <h3>{title}</h3>

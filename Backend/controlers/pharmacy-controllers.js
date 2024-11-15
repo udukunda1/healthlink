@@ -8,7 +8,6 @@ export const GetPharmacies = async (req, res, next) => {
         let pharmacies = await pharmacy.find({}, '-password').populate('studentReviews.uid', '-password');
 
         res.json({ pharmacies: pharmacies.map(pharmacy => pharmacy.toObject({ getters: true })) });
-        // res.status(400).json({err: 'failed'});
 
     }
     catch(err) {

@@ -1,27 +1,23 @@
-import { useParams, useNavigate, useLoaderData } from 'react-router-dom';
+import { useNavigate, useLoaderData, useNavigation } from 'react-router-dom';
 import Button from '../../../shared/components/UI/Button/Button';
 import Details from '../../components/pharmacydetails/Details';
 import Inventory from '../../components/pharmacydetails/Inventory';
 import Map from '../../components/pharmacydetails/Map';
 import PharmcyStudentReviews from '../../components/pharmacydetails/PharmcyStudentReviews';
 import './PharmacyDetails.css';
-// import { pharmacies } from '../../../shared/utils/data';
 import { IoCaretBackCircle } from 'react-icons/io5';
 import Modal from '../../../shared/components/UI/Modal/modal';
 import useOpenModal from '../../../shared/hooks/useOpenModal';
+import LoadingSpinner from '../../../shared/components/UI/loadingspinner/LoadingSpinner';
 
 function PharmacyDetails() {
     const { pharmacy } = useLoaderData();
-    // console.log(pharmacy);
     const [modalRef, openModal] = useOpenModal();
     const [favouriteModalRef, openFavouriteModal] = useOpenModal();
-    // console.log(pharmacy.inventory.medicines);
-    // console.log(pharmacy.studentReviews);
 
     let navigate = useNavigate();
     let navig = useNavigate();
-    // let { pharmacyId } = useParams();
-    // const pharmacy = pharmacies.find(pharma => pharma.id === pharmacyId);
+    let navigation = useNavigation();
 
     function handleLogin(){
         navig('/authenticate/student/');
@@ -29,6 +25,7 @@ function PharmacyDetails() {
 
     return(
         <>
+        {navigation.state === 'loading' && <LoadingSpinner asOverlay />}
         <div className='rem3-top-place-holder'></div>
         <div className='pharmacy-details'>
         <Modal ref={modalRef} addButton={{name:'Rate'}}>
