@@ -78,7 +78,7 @@ function PharmacyDetails() {
         {navigation.state === 'loading' && <LoadingSpinner asOverlay />}
         {isLoading && <LoadingSpinner asOverlay />}
         <Modal  ref={myModalRef}>
-        Login to leave your review
+        {logData.err === 'authentication failed'? 'Login to leave your review': logData.err}
         </Modal>
         <div className='rem3-top-place-holder'></div>
         <div className='pharmacy-details'>
@@ -124,9 +124,6 @@ export default PharmacyDetails;
 export async function ploader({params}) {
     const id = params.pharmacyId;
     const response = await fetch(`http://localhost:5000/pharma/${id}`);
-    if(!response.ok){
-      //..
-    }
 
     return response;
   }

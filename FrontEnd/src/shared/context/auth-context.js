@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 
 export const authContext = createContext({
@@ -6,3 +6,22 @@ export const authContext = createContext({
     login: () => {},
     logout: () => {}
 })
+
+function ContextProvider({children}){
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  function login(obj){
+    setIsLoggedIn(obj);
+  }
+  function logout(){
+    setIsLoggedIn(false);
+  }
+
+  return (
+    <authContext.Provider value={{isLoggedIn, login, logout}}>
+        {children}
+    </authContext.Provider>
+  )
+}
+
+export default ContextProvider;

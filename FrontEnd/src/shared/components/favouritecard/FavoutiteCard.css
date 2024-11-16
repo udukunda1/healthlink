@@ -1,0 +1,37 @@
+.favoutite-card{
+    /* background: red; */
+    width: 100%;
+    height: 3rem;
+    border-radius: 2px;
+    box-shadow: 0 0 5px var(--dark-green);
+    margin: 0.2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.favoutite-card__image {
+    width: 5rem;
+    height: 100%;
+    background: black;
+}
+
+.favoutite-card button {
+    border-radius: 3px;
+    border: none;
+    font-family: inherit;
+    background: red;
+    color: white;
+    height: 60%;
+    margin-right: 0.2rem;
+}
+
+.favoutite-card button:hover {
+    cursor: pointer;
+}
+
+.favoutite-card img {
+    width: 100%;            /* Make the image take up full width */
+    height: 100%;           /* Adjust height to fit */
+    object-fit: cover;      /* Crop to fill the container while preserving aspect ratio */
+  }

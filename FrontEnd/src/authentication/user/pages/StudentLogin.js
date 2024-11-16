@@ -76,32 +76,3 @@ function StudentLogin(){
 }
 
 export default StudentLogin;
-
-// export async function action({request}) {
-//     try {
-//         const data = await request.formData();
-//         console.log(data, 'daata');
-//     const loginData = {
-//         email: data.get('email'),
-//         password: data.get('password')
-//     }
-//     const response = await fetch('http://localhost:5000/users/login',{
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(loginData)
-//     })
-
-//     if(!response.ok){
-//         //....
-//     }
-
-//     const resData = await response.json();
-
-//     console.log(resData);
-//     }
-//     catch {
-//         console.log('failed');
-//     }
-// }

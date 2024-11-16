@@ -62,6 +62,9 @@ export const Rate = async (req, res, next) => {
     const uid = req.userId;
 
     try {
+    if(!review){
+        return res.json({err: 'empty review not allowed'});
+    }
 
     await user.findById(uid);
     const pharma = await pharmacy.findById(pid);
