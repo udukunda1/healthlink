@@ -20,6 +20,7 @@ const Modal = forwardRef(({children, addButton='', ...props}, ref) => {
   // Expose the handleOpen function through the ref
   useImperativeHandle(ref, () => ({
     open: handleOpen,
+    close: handleClose
   }));
 
   return (

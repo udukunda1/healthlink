@@ -114,9 +114,12 @@ export const SignUp = async (req, res, next) => {
 
 export const Login = async (req, res, next) => {
     const { email, password } = req.body;
+    if(!email || !password){
+        return res.status(400).json({err: 'enter email and password!'});
+    }
     let usr = await user.findOne({ email: email });
     if(!usr){
-        return res.status(400).json({err: 'email not found please try again!'});
+        return res.status(400).json({err: 'account not found please try again or maybe signUp!'});
     }
 
     let isValid = password === usr.password;

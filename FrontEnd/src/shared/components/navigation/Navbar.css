@@ -17,6 +17,10 @@
     padding: 0 2rem;
 }
 
+.nav-list__user {
+    margin-right: 3rem;
+}
+
 .nav-lists a {
     color: inherit;
     text-decoration: none;

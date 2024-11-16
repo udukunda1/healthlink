@@ -19,7 +19,7 @@ export const GetPharmacy = async (req, res, next) => {
     const {pid} = req.params;
 
     try{
-        let pharma = await pharmacy.findById(pid);
+        let pharma = await pharmacy.findById(pid).populate('studentReviews.uid', '-password');
 
     if(pharma.length == 0){
         res.status(400).json({err: 'pharmacy not found!'})

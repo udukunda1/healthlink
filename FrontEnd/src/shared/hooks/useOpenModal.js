@@ -8,7 +8,11 @@ function useOpenModal() {
       modalRef.current.open(); // Calls handleOpen in the Modal component
     },[]);
 
-    return [modalRef, openModal]
+    function closeModal() {
+      modalRef.current.close();
+    }
+
+    return [modalRef, openModal, closeModal]
 }
 
 export default useOpenModal;

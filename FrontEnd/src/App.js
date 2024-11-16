@@ -62,8 +62,8 @@ const router = createBrowserRouter([
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  function login(){
-    setIsLoggedIn(true);
+  function login(obj){
+    setIsLoggedIn(obj);
   }
   function logout(){
     setIsLoggedIn(false);

@@ -1,0 +1,19 @@
+.favourite-icon{
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--dark-green);
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    right: 0;
+    bottom: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.8rem;
+    box-shadow: 0 0 10px var(--dark-green);
+}
+
+.favourite-icon:hover {
+    cursor: pointer;
+}

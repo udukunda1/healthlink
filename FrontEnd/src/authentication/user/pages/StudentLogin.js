@@ -39,7 +39,7 @@ function StudentLogin(){
             if(resData.err){
                 return;
             }
-            auth.login();
+            auth.login(resData);
             navigate('/');
             }
             catch {
