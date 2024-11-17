@@ -13,6 +13,7 @@ function Navbar() {
     function handleLogout(){
         auth.logout();
         navigate('/');
+        auth.toggleChanger();
     }
 
     return (
