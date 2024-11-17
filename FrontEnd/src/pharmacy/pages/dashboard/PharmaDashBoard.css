@@ -1,0 +1,53 @@
+.pharma-dashboard {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -1;
+}
+
+.pharma-dashboard__header {
+    width: 100%;
+    position: fixed;
+    height: 10vh;
+    background: var(--dark-green);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pharma-dashboard__content {
+    padding-top: 15vh ;
+    padding-bottom: 5vh;
+    width: 100%;
+    /* background: rgba(255, 255, 255, 0.7); */
+    display: flex;
+    justify-content: center;
+}
+
+.pharma-dashboard__content-holder {
+    width: 80%;
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+.pharma-dashboard__content-holder .inventory-management {
+    /* background: rebeccapurple; */
+    width: 50%;
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.pharma-dashboard__content-holder h2 {
+    padding: 0.5rem;
+    color: var(--dark-green);
+}
+
+.pharma-dashboard__content-holder .avairable-services {
+    /* background: yellowgreen; */
+    width: 50%;
+    height: 100%;
+    padding: 1.5rem;
+}

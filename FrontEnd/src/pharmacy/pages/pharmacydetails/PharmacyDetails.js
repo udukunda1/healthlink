@@ -27,7 +27,6 @@ function PharmacyDetails() {
 
 
     function handleRate(){
-        console.log( textRef.current.value );
         closeModal();
         async function Rate(){
             try{

@@ -38,11 +38,13 @@ app.use((req, res, next) => {
 // app.use(async (req, res, next) => {
 //   const created = new pharmacy({
 //     image: 'ketie.png',
-//     title: 'pharma new',
-//     address: 'new home',
-//     number: 250790417509,
-//     workingHours: 'always',
-//     password: 'hashed'
+//     title: 'pharmacy here',
+//     address: 'KGL',
+//     number: 250790417511,
+//     workingHours: '24/7',
+//     password: 'hashed',
+//     inventory: {updatedAt: '12/7/2024', medicines: ['amox', 'ment', 'gigim', 'paracetamol']},
+//     avairableServices: ['sell meds', 'take prescription']
 //   })
 //   await created.save();
 //   res.json({message: 'created pharmacy'});
