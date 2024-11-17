@@ -33,7 +33,6 @@ function StudentLogin(){
             const resData = await response.json();
             setIsLoading(false);
 
-            console.log(resData);
             setLogData(resData);
 
             if(resData.err){
