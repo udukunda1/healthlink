@@ -12,7 +12,7 @@ function PharmacyStudentReviews({reviews}) {
 
    return (
        <div className='PharmacyStudentReviews'>
-           {reversedReviews.map(review => <PharmcyStudentReviewsItem key={review.id} name={review.uid.name} content={review.content} image={review.uid.picture} />)}
+           {reversedReviews.map(review => review.uid && <PharmcyStudentReviewsItem key={review.id} name={review.uid.name} content={review.content} image={review.uid.picture} />)}
        </div>
    )
 
