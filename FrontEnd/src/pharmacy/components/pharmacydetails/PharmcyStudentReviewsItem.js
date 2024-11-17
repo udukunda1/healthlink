@@ -9,7 +9,7 @@ function PharmcyStudentReviewsItem({name, content, image}) {
         <div className='PharmcyStudentReviewsItem'>
             <div className="PharmcyStudentReviewsItem__heading">
                 <div className="PharmcyStudentReviewsItem__heading--image">
-                <img src={`http://localhost:5000/uploads/images/${image}`} alt='img' />
+                <img src={`http://localhost:5000/${image}`} alt='img' />
                 </div>
                 <div className="PharmcyStudentReviewsItem__heading--name">
                     <p>{name}</p>

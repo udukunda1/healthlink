@@ -1,7 +1,7 @@
 import pharmacy from "../models/pharmacy.js";
 import user from "../models/user.js";
 import jwt from 'jsonwebtoken';
-
+import fs from 'fs'
 
 
 
@@ -80,17 +80,41 @@ export const Rate = async (req, res, next) => {
 }
 
 export const SignUp = async (req, res, next) => {
-    const {name, email, picture, password} = req.body;
+    const {name, email, password, confirmPassword} = req.body;
+
+    if(!name || !email || !req.file || !password || !confirmPassword){
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
+        return res.status(400).json({err: 'every field must be filled.'});
+    }
+
+    if(!email.includes('@')){
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
+        return res.status(400).json({err: 'Please enter a valid email address.'});
+    }
+
+    if(password !== confirmPassword){
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
+        return res.status(400).json({err: 'Please ensure that your password and confirm password are the same.'});
+    }
 
     try{
         let existingUser = await user.findOne({ email: email });
     if(existingUser){
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
         return res.status(400).json({err: 'User exists already, please login instead.'});
     }
     const createdUser = new user({
         name,
         email,
-        picture,
+        picture:  req.file.path,
         password
     });
 
@@ -102,6 +126,9 @@ export const SignUp = async (req, res, next) => {
             { expiresIn: '24h' })
     }
     catch(err){
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
         res.status(400).json({err: 'failed'})
     }
 
@@ -110,6 +137,9 @@ export const SignUp = async (req, res, next) => {
         res.json({name: createdUser.name, token});
     }
     catch {
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
         res.status(400).json({err: 'failed, try again later'});
     }
 }
