@@ -150,6 +150,10 @@ export const Login = async (req, res, next) => {
     if(!email || !password){
         return res.status(400).json({err: 'enter email and password!'});
     }
+    if(!email.includes('@')){
+        return res.status(400).json({err: 'Please enter a valid email address.'});
+    }
+
     let usr = await user.findOne({ email: email });
     if(!usr){
         return res.status(400).json({err: 'account not found please try again or maybe signUp!'});
