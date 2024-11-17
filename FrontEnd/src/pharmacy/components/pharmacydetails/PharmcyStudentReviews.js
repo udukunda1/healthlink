@@ -8,10 +8,11 @@ function PharmacyStudentReviews({reviews}) {
             <h3 style={{textAlign: 'center', padding: '1rem'}}>no reviews yet</h3>
         )
     }
+    const reversedReviews = [...reviews].reverse();
 
    return (
        <div className='PharmacyStudentReviews'>
-           {reviews.map(review => <PharmcyStudentReviewsItem key={review.id} name={review.uid.name} content={review.content} image={review.uid.picture} />)}
+           {reversedReviews.map(review => <PharmcyStudentReviewsItem key={review.id} name={review.uid.name} content={review.content} image={review.uid.picture} />)}
        </div>
    )
 

@@ -17,7 +17,7 @@ export const AddToFavorite = async (req, res, next) => {
     const exist = usr.favourite.find(elem => String(elem) === String(pharma.id));
 
     if(exist){
-        return res.status(400).json({err: 'aleady favourite'});
+        return res.status(400).json({err: 'already favourite'});
     }
 
     usr.favourite.push(pid);

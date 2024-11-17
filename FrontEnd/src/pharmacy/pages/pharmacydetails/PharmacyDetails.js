@@ -16,20 +16,15 @@ function PharmacyDetails() {
     const { pharmacy } = useLoaderData();
     const [modalRef, openModal, closeModal] = useOpenModal();
     const [myModalRef, myOpenModal] = useOpenModal();
-    const [favouriteModalRef, openFavouriteModal] = useOpenModal();
     const textRef = useRef();
     const [isLoading, setIsLoading] = useState(false);
     const [logData, setLogData] = useState({err: ''});
     const { pharmacyId } = useParams();
 
     let navigate = useNavigate();
-    let navig = useNavigate();
     let navigation = useNavigation();
     const auth = useContext(authContext);
 
-    function handleLogin(){
-        navig('/authenticate/student/');
-    }
 
     function handleRate(){
         console.log( textRef.current.value );
@@ -49,7 +44,6 @@ function PharmacyDetails() {
             const resData = await response.json();
             setIsLoading(false);
 
-            console.log(resData);
             setLogData(resData);
 
             if(resData.err){
@@ -67,6 +61,38 @@ function PharmacyDetails() {
         Rate();
     }
 
+    function handleAddToFavourite() {
+        async function Add(){
+            try{
+                setIsLoading(true);
+            const response = await fetch(`http://localhost:5000/users/favourite/${pharmacyId}`,{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + auth.isLoggedIn.token
+                }
+            })
+
+            const resData = await response.json();
+            setIsLoading(false);
+
+            setLogData(resData);
+
+            if(resData.err){
+                return;
+            }
+            auth.toggleChanger();
+            navigate(`/directory/details/${pharmacyId}`);
+            }
+            catch {
+                setIsLoading(false);
+                console.log('failed');
+            }
+        }
+
+        Add();
+    }
+
     useEffect(() => {
         if(logData.err){
           myOpenModal();
@@ -78,7 +104,7 @@ function PharmacyDetails() {
         {navigation.state === 'loading' && <LoadingSpinner asOverlay />}
         {isLoading && <LoadingSpinner asOverlay />}
         <Modal  ref={myModalRef}>
-        {logData.err === 'authentication failed'? 'Login to leave your review': logData.err}
+        {logData.err === 'authentication failed'? 'You must Login first': logData.err}
         </Modal>
         <div className='rem3-top-place-holder'></div>
         <div className='pharmacy-details'>
@@ -88,9 +114,6 @@ function PharmacyDetails() {
         <textarea name="message" rows="5" cols="40" ref={textRef}>
         </textarea>
         </form>
-        </Modal>
-        <Modal ref={favouriteModalRef} addButton={{name:'Login', handleClick: handleLogin}}>
-            Login to add Pharmacy to favourite.
         </Modal>
             <div className='pharmacy-details__head'>
                 <Button onClick={() => navigate(-1)}><IoCaretBackCircle /> Back</Button>
@@ -106,7 +129,7 @@ function PharmacyDetails() {
             <h2>live inventory Medication List</h2>
                 <Inventory lastUpdated={pharmacy.inventory.updatedAt || 'not yet'} medicines={pharmacy.inventory.medicines} />
                 <div className='buttons'>
-                <Button onClick={openFavouriteModal}>Add to favourite</Button>
+                <Button onClick={handleAddToFavourite}>Add to favourite</Button>
                 <Button onClick={openModal}>Rate</Button>
                 </div>
             </div>

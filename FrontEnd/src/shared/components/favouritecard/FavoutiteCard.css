@@ -28,6 +28,14 @@
 
 .favoutite-card button:hover {
     cursor: pointer;
+    background: white;
+    color: red;
+    border: 2px solid red;
+}
+
+.favoutite-card button:active {
+    background: red;
+    color: white;
 }
 
 .favoutite-card img {

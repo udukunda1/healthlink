@@ -46,7 +46,7 @@ function FavouriteIcon() {
             <div className='favourite-modal'>
             <h2>favourites</h2>
             <p>{!auth.isLoggedIn && 'Your favorite pharmacy is missing. Log in to add it now!'}</p>
-            {auth.isLoggedIn && logData.favourite.length !== 0 && <>{logData.favourite.map(pharma => <FavoutiteCard name={pharma.title} image={pharma.image} />)}</> }
+            {auth.isLoggedIn && logData.favourite.length !== 0 && <>{logData.favourite.map(pharma => <FavoutiteCard name={pharma.title} image={pharma.image} id={pharma.id} />)}</> }
             {auth.isLoggedIn && logData.favourite.length === 0 && <p>No favorite pharmacy selected. Choose one today!</p>}
             </div>
         </Modal>
