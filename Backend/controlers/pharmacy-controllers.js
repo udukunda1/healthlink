@@ -68,3 +68,104 @@ export const LoginPharmacy = async (req, res, next) => {
     }
 
 }
+
+export const addMed = async (req, res, next) => {
+    const pid = req.pharmacyId;
+    const { medicine } = req.body;
+
+    if(!medicine){
+        return res.status(400).json({err: 'insert medicine'});
+    }
+
+    try {
+
+    const pharma = await pharmacy.findById(pid);
+
+    const exist = pharma.inventory.medicines.find(elem => String(elem) === String(medicine));
+
+    if(exist){
+        return res.status(400).json({err: 'already exist'});
+    }
+
+    pharma.inventory.medicines.push(medicine);
+    await pharma.save();
+    res.json({message: 'done'});
+    }
+    catch(err) {
+        res.status(400).json({err: 'failed'});
+    }
+}
+
+export const addService = async (req, res, next) => {
+    const pid = req.pharmacyId;
+    const { service } = req.body;
+
+    if(!service){
+        return res.status(400).json({err: 'insert service'});
+    }
+
+
+    try {
+
+    const pharma = await pharmacy.findById(pid);
+
+    const exist = pharma.avairableServices.find(elem => String(elem) === String(service));
+
+    if(exist){
+        return res.status(400).json({err: 'already exist'});
+    }
+
+    pharma.avairableServices.push(service);
+    await pharma.save();
+    res.json({message: 'done'});
+    }
+    catch(err) {
+        res.status(400).json({err: 'failed'});
+    }
+}
+
+export const DeleteMed = async (req, res, next) => {
+    const pid = req.pharmacyId;
+    const { medicine } = req.body;
+    if(!medicine){
+        return res.status(400).json({err: 'empty input'});
+    }
+
+    try {
+        const pharma = await pharmacy.findById(pid);
+        const exist = pharma.inventory.medicines.find(elem => String(elem) === String(medicine));
+        if(!exist) {
+            return res.status(400).json({err: 'error trying to delete unavailable medicine'});
+        }
+        pharma.inventory.medicines.pull(medicine);
+        await pharma.save();
+        res.json({message: 'deleted'});
+    }
+    catch {
+        res.status(400).json({err: 'failed to delete'});
+    }
+
+}
+
+export const DeleteService = async (req, res, next) => {
+    const pid = req.pharmacyId;
+    const { service } = req.body;
+    if(!service){
+        return res.status(400).json({err: 'empty input'});
+    }
+
+    try {
+        const pharma = await pharmacy.findById(pid);
+        const exist = pharma.avairableServices.find(elem => String(elem) === String(service));
+        if(!exist) {
+            return res.status(400).json({err: 'error trying to delete unavailable service'});
+        }
+        pharma.avairableServices.pull(service);
+        await pharma.save();
+        res.json({message: 'deleted'});
+    }
+    catch {
+        res.status(400).json({err: 'failed to delete'});
+    }
+
+}
