@@ -6,6 +6,12 @@
     margin: 1rem 0;
 }
 
+@media (max-width: 410px) {
+    .availability-search {
+        min-height: 85rem;
+    }
+}
+
 .availability-search > h1 {
     color: var(--dark-green);
     padding: 1rem 0;

@@ -4,6 +4,12 @@
     min-height: 70vh;
 }
 
+@media (max-width: 410px) {
+  .searchable-list {
+      width: 100%;
+  }
+}
+
 .searchable-list li {
   list-style: none;
 }

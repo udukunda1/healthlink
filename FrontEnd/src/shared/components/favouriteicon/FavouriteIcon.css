@@ -14,6 +14,14 @@
     box-shadow: 0 0 10px var(--dark-green);
 }
 
+@media (max-width: 410px) {
+    .favourite-icon {
+        width: 6rem;
+        height: 6rem;
+        bottom: 50vh;
+    }
+}
+
 .favourite-icon:hover {
     cursor: pointer;
 }

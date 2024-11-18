@@ -7,10 +7,24 @@
     margin: 2rem 0;
 }
 
+@media (max-width: 410px) {
+    .pharmacy-card {
+        width: 80%;
+        height: 40rem;
+    }
+}
+
 .pharmacy-card:hover {
     width: 25.5vw;
     height: 60.5vh;
     box-shadow: 0 0 20px rgba(14,79,31,0.8);
+}
+
+@media (max-width: 410px) {
+    .pharmacy-card:hover {
+        width: 80%;
+        height: 40rem;
+    }
 }
 
 .pharmacy-card a{
@@ -41,7 +55,14 @@
     padding: 0.5rem 1rem;
 }
 
+@media (max-width: 410px) {
+    .pharmacy-card__content {
+       margin-top: 2rem;
+    }
+}
+
 .pharmacy-card__content h2 {
     color: var(--dark-green);
     padding-bottom: 0.3rem;
 }
+

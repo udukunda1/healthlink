@@ -8,6 +8,15 @@
                          " reviews reviews reviews inventory inventory ";
 }
 
+@media (max-width: 410px) {
+    .pharmacy-details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 10rem;
+    }
+}
+
 .pharmacy-details__head {
     grid-area: head;
     padding: 1rem;
@@ -39,11 +48,23 @@
     padding: 1rem 4rem;
 }
 
+@media (max-width: 410px) {
+    .pharmacy-details__details {
+        width: 100%;
+    }
+}
+
 .pharmacy-details__inventory {
     /* background: rgb(33, 186, 92); */
     grid-area: inventory;
     width: 40vw;
     padding: 1rem;
+}
+
+@media (max-width: 410px) {
+    .pharmacy-details__inventory {
+        width: 100%;
+    }
 }
 
 .pharmacy-details__inventory h2 {
@@ -64,9 +85,21 @@
     width: 40vw;
 }
 
+@media (max-width: 410px) {
+    .pharmacy-details__reviews {
+        width: 100%;
+    }
+}
+
 .pharmacy-details__reviews h2 {
     text-align: center;
     color: var(--dark-green);
+}
+
+@media (max-width: 410px) {
+    .pharmacy-details__reviews h2 {
+        margin-top: 2rem;
+    }
 }
 
 .pharmacy-details textarea {

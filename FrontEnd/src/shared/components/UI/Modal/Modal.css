@@ -7,6 +7,12 @@ dialog {
     width: 30vw;
     padding: 0 !important;
   }
+
+  @media (max-width: 410px) {
+    dialog {
+      width: 75%
+    }
+}
   .place-holder {
     background: var(--dark-green);
     height: 2rem;
@@ -20,6 +26,12 @@ dialog {
     font-weight: bold;
     padding-top: 0.4rem;
   }
+
+  @media (max-width: 410px) {
+    .place-holder__content {
+      text-align: center;
+    }
+}
 
   .content {
     padding: 20px;

@@ -9,6 +9,15 @@
     margin-bottom: 1rem;
 }
 
+@media (max-width: 410px) {
+    .PharmcyStudentReviewsItem {
+        min-height: 15rem;
+        width: 85%;
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+}
+
 .PharmcyStudentReviewsItem__heading {
     display: flex;
     align-items: center;

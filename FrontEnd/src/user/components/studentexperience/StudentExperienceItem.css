@@ -9,6 +9,15 @@
     box-shadow: 2px 2px 2px rgba(14,79,31,0.8);
 }
 
+@media (max-width: 410px) {
+    .StudentExperienceItem {
+        min-height: 15rem;
+        width: 85%;
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+}
+
 .StudentExperienceItem__heading {
     display: flex;
     align-items: center;

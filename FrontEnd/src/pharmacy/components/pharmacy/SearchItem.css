@@ -7,10 +7,22 @@
     display: flex;
 }
 
+@media (max-width: 410px) {
+    .search-item-card {
+        width: 100%;
+    }
+}
+
 .search-item-card:hover {
     width: 65.5vw;
     height: 30.5vh;
     box-shadow: 0 0 20px rgba(14,79,31,0.8);
+}
+
+@media (max-width: 410px) {
+    .search-item-card:hover {
+        width: 100%;
+    }
 }
 
 .search-item-card__link{

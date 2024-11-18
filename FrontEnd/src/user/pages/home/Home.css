@@ -16,12 +16,18 @@
     width: 70vw;
 }
 
+@media (max-width: 410px) {
+    .cta-getstarted__text {
+       width: 70%;
+    }
+}
+
 .cta-getstarted__button {
     margin-left: 3rem;
 }
 
 .featured-pharmacies {
-    height: 80vh;
+    min-height: 80vh;
 }
 
 .featured-pharmacies h1 {
