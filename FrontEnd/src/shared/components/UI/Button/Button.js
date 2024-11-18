@@ -7,14 +7,14 @@ function Button({children , type='button', className = '',...props}){
 
     if(type === 'a'){
         return (
-        <motion.a
+        <motion.button
          className={`ui-button ${className??null}`}
          {...props}
          whileHover={{scale: 1.02}}
          transition={{type: 'spring', stiffness: 500}}
          >
             {children}
-        </motion.a>
+        </motion.button>
         )
     }
 

@@ -25,7 +25,7 @@ function SearchItem({title, address, image, time, meds, id}) {
                 {meds.length === 0? <p>Unavailable at the moment!</p>
                 :
                 <ul>
-                    {meds.map(med => <li><MdMedication />{med}</li>)}
+                    {meds.map(med => <li key={med}><MdMedication />{med}</li>)}
                     <li className='others'>and others</li>
                 </ul>
                 }

@@ -14,7 +14,7 @@ function Details({tel, hours, address, services}) {
                 <p className='item item3'><MdLocationOn /> {address}</p>
                 <h3 className='item item4'><MdMedicalServices /> available services</h3>
                 <ul className='item item5'>
-                    {services.length === 0? <h3>unavairable at the moment</h3> : services.map(service => <li>{service}</li>)}
+                    {services.length === 0? <h3>unavairable at the moment</h3> : services.map(service => <li key={service}>{service}</li>)}
                 </ul>
         </div>
     )

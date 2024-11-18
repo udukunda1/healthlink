@@ -14,25 +14,27 @@ function FavouriteIcon() {
 
     useEffect(() => {
         async function getFav(){
-            try{
+            if(auth.isLoggedIn){
+                try{
 
-            const response = await fetch(`http://localhost:5000/users/favourite`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + auth.isLoggedIn.token
-                }
-            });
+                    const response = await fetch(`http://localhost:5000/users/favourite`, {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + auth.isLoggedIn.token
+                        }
+                    });
 
-            const resData = await response.json();
+                    const resData = await response.json();
 
-            if(resData.err){
-                return;
-            }
-            setLogData(resData);
+                    if(resData.err){
+                        return;
+                    }
+                    setLogData(resData);
 
-            }
-            catch {
-                console.log('failed');
+                    }
+                    catch {
+                        console.log('failed');
+                    }
             }
         }
 

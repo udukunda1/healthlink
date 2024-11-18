@@ -19,7 +19,7 @@ function Navbar() {
     return (
     <nav className="nav">
         <ul className="nav-lists">
-            <li className="nav-list logo">Logo</li>
+            <NavLink to="/"><li className="nav-list logo"><h1>HealthLink</h1></li></NavLink>
             {auth.isLoggedIn && <li className="nav-list__user"><FaUserCircle /> User: {auth.isLoggedIn.name}</li>}
             <div className='nav-lists__links'>
             <li className="nav-list"><NavLink to="/" className={({isActive}) => isActive? 'link active' : 'link'} end>Home</NavLink></li>
