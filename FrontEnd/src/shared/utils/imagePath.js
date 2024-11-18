@@ -1,0 +1,1 @@
+export const imagePath = "http://localhost:5000/uploads/images/";

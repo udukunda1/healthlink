@@ -8,6 +8,7 @@ import { pharmaAuthContext } from '../../../shared/context/pharma-auth-context';
 import Modal from '../../../shared/components/UI/Modal/modal';
 import useOpenModal from '../../../shared/hooks/useOpenModal';
 import LoadingSpinner from '../../../shared/components/UI/loadingspinner/LoadingSpinner';
+import { imagePath } from '../../../shared/utils/imagePath';
 
 function PharmaDashBoard() {
     const { pharmacy } = useLoaderData();
@@ -107,7 +108,7 @@ function PharmaDashBoard() {
 
     return (
         <>
-        <div className='pharma-dashboard' style={{backgroundImage: `url(http://localhost:5000/uploads/images/${pharmacy.image})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div className='pharma-dashboard' style={{backgroundImage: `url(${imagePath}${pharmacy.image})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         </div>
         {isLoading && <LoadingSpinner asOverlay />}
         <Modal  ref={myModalRef}>

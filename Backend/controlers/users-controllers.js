@@ -114,7 +114,7 @@ export const SignUp = async (req, res, next) => {
     const createdUser = new user({
         name,
         email,
-        picture:  req.file.path,
+        picture: req.file.filename,
         password
     });
 

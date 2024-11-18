@@ -1,6 +1,7 @@
 import user from "../models/user.js";
 import pharmacy from "../models/pharmacy.js";
 import jwt from 'jsonwebtoken';
+import fs from 'fs';
 
 
 
@@ -67,6 +68,77 @@ export const LoginPharmacy = async (req, res, next) => {
         res.status(400).json({err: 'failed'});
     }
 
+}
+
+export const SignUpPharmacy = async (req, res, next) => {
+    const { title, address, number, workingHours, date, password, confirmPassword, code } = req.body;
+
+    if(!title || !address || !req.file || !password || !confirmPassword || !number || !workingHours || !date || !code){
+        console.log({title, address,file: req.file, password, confirmPassword,number, workingHours, date, code});
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
+        return res.status(400).json({err: 'every field must be filled.'});
+    }
+
+    if(password !== confirmPassword){
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
+        return res.status(400).json({err: 'Please ensure that your password and confirm password are the same.'});
+    }
+
+    if(code != 1234) {
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
+        return res.status(400).json({err: 'invalid Access Code.'});
+    }
+
+    try{
+        let existingNumber = await pharmacy.findOne({ number: number });
+    if(existingNumber){
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
+        return res.status(400).json({err: 'Pharmacy exists already, please login instead.'});
+    }
+    const createdPharmacy = new pharmacy({
+        title,
+        address,
+        number,
+        workingHours,
+        password,
+        image: req.file.filename
+    });
+
+    createdPharmacy.inventory.updatedAt = date;
+
+    let token
+    try{
+           token = jwt.sign(
+            { pharmaId: createdPharmacy.id },
+            'supersecret_dont_share',
+            { expiresIn: '24h' })
+    }
+    catch(err){
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
+        res.status(400).json({err: 'failed'})
+    }
+
+    await createdPharmacy.save();
+
+        res.json({name: createdPharmacy.title, id: createdPharmacy.id, token});
+    }
+    catch(err) {
+        if(req.file) {
+            fs.unlink(req.file.path, (err) => '');
+        }
+        console.log(err);
+        res.status(400).json({err: 'failed, try again later'});
+    }
 }
 
 export const addMed = async (req, res, next) => {

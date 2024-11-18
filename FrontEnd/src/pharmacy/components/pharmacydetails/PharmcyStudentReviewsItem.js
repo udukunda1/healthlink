@@ -1,6 +1,7 @@
 import { FaStar } from 'react-icons/fa';
 
 import './PharmcyStudentReviewsItem.css';
+import { imagePath } from '../../../shared/utils/imagePath';
 
 
 function PharmcyStudentReviewsItem({name, content, image}) {
@@ -9,7 +10,7 @@ function PharmcyStudentReviewsItem({name, content, image}) {
         <div className='PharmcyStudentReviewsItem'>
             <div className="PharmcyStudentReviewsItem__heading">
                 <div className="PharmcyStudentReviewsItem__heading--image">
-                <img src={`http://localhost:5000/${image}`} alt='img' />
+                <img src={`${imagePath}${image}`} alt='img' />
                 </div>
                 <div className="PharmcyStudentReviewsItem__heading--name">
                     <p>{name}</p>

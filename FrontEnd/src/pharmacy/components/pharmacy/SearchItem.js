@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './SearchItem.css';
 import { MdMedication } from 'react-icons/md';
 import { motion } from 'framer-motion';
+import { imagePath } from '../../../shared/utils/imagePath';
 
 function SearchItem({title, address, image, time, meds, id}) {
     return(
@@ -12,7 +13,7 @@ function SearchItem({title, address, image, time, meds, id}) {
          transition={{type: 'spring', stiffness: 500}}
          >
             <div className='search-item-card__image'>
-                <img src={`http://localhost:5000/uploads/images/${image}`} alt='img' />
+                <img src={`${imagePath}${image}`} alt='img' />
             </div>
             <div className='search-item-card__content'>
                 <h3>{title}</h3>
