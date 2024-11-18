@@ -68,7 +68,7 @@ export const Rate = async (req, res, next) => {
 
     await user.findById(uid);
     const pharma = await pharmacy.findById(pid);
-    const rev = {uid, content: review};
+    const rev = {uid, content: '"' + review + '"'};
     pharma.studentReviews.push(rev);
     await pharma.save();
     res.json({message: 'done rate.'});
