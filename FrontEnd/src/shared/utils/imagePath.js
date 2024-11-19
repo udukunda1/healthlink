@@ -1,2 +1,2 @@
-export const imagePath = "http://localhost:5000/uploads/images/";
-export const path = "http://localhost:5000";
+export const imagePath = "https://hearth-link-69fd05065827.herokuapp.com/uploads/images/";
+export const path = "https://hearth-link-69fd05065827.herokuapp.com";

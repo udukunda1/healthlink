@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7b65ff3a.css",
+    "main.js": "/static/js/main.f53c9d49.js",
+    "static/js/453.ee6b5d0c.chunk.js": "/static/js/453.ee6b5d0c.chunk.js",
+    "static/media/WomanHoldingPhone-PharmacyScreen-01.jpg": "/static/media/WomanHoldingPhone-PharmacyScreen-01.9f5048cda9418f4cfb3e.jpg",
+    "static/media/map.png": "/static/media/map.1fc3ac8040b336c193c6.png",
+    "static/media/image.jpg": "/static/media/image.169c1339ff1ef9067b99.jpg",
+    "index.html": "/index.html",
+    "main.7b65ff3a.css.map": "/static/css/main.7b65ff3a.css.map",
+    "main.f53c9d49.js.map": "/static/js/main.f53c9d49.js.map",
+    "453.ee6b5d0c.chunk.js.map": "/static/js/453.ee6b5d0c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b65ff3a.css",
+    "static/js/main.f53c9d49.js"
+  ]
+}

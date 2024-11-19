@@ -5,62 +5,39 @@ import path from 'path';
 import pharmaRoutes from './routes/pharmacy-routes.js';
 import userRoutes from './routes/users-routes.js';
 import bodyParser from 'body-parser';
-import pharmacy from './models/pharmacy.js';
-import user from './models/user.js';
 
 
 const app = express();
 app.use(bodyParser.json());
 app.use('/uploads/images', express.static(path.join('uploads', 'images')));
+app.use(express.static(path.join('public')));
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-    );
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader(
+//       'Access-Control-Allow-Headers',
+//       'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+//     );
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
 
-    next();
-  });
-
-// app.use(async (req, res, next) => {
-//   const created = new user({
-//     name: 'patrick',
-//     email: 'rumpatr048@gmail.com',
-//     picture: 'hdhhdh',
-//     password: 'hashed',
-//   })
-//   await created.save();
-//   res.json({message: 'user created'});
-// })
-
-// app.use(async (req, res, next) => {
-//   const created = new pharmacy({
-//     image: 'ketie.png',
-//     title: 'pharmacy here',
-//     address: 'KGL',
-//     number: 250790417511,
-//     workingHours: '24/7',
-//     password: 'hashed',
-//     inventory: {updatedAt: '12/7/2024', medicines: ['amox', 'ment', 'gigim', 'paracetamol']},
-//     avairableServices: ['sell meds', 'take prescription']
-//   })
-//   await created.save();
-//   res.json({message: 'created pharmacy'});
-// })
+//     next();
+//   });
 
 app.use('/pharma', pharmaRoutes);
 app.use('/users', userRoutes);
 
 app.use((req, res, next) => {
-  res.json({message: 'can not find this end point'});
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
+
+// app.use((req, res, next) => {
+//   res.json({message: 'can not find this end point'});
+// });
 
 
 mongoose.connect(`mongodb+srv://boy:1235@cluster0.kdnd2.mongodb.net/healthlink`)
 .then(() => {
-    app.listen(5000);
+    app.listen(process.env.PORT || 5000);
     console.log('connected');
 })
 .catch(error => {
