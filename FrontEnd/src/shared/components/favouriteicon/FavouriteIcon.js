@@ -5,6 +5,7 @@ import { authContext } from '../../context/auth-context';
 import Modal from '../UI/Modal/modal';
 import useOpenModal from '../../hooks/useOpenModal';
 import FavoutiteCard from '../favouritecard/FavoutiteCard';
+import { path } from '../../utils/imagePath';
 
 
 function FavouriteIcon() {
@@ -17,7 +18,7 @@ function FavouriteIcon() {
             if(auth.isLoggedIn){
                 try{
 
-                    const response = await fetch(`http://localhost:5000/users/favourite`, {
+                    const response = await fetch(`${path}/users/favourite`, {
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': 'Bearer ' + auth.isLoggedIn.token

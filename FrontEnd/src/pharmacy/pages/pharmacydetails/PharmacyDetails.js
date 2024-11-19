@@ -11,6 +11,7 @@ import useOpenModal from '../../../shared/hooks/useOpenModal';
 import LoadingSpinner from '../../../shared/components/UI/loadingspinner/LoadingSpinner';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { authContext } from '../../../shared/context/auth-context';
+import { path } from '../../../shared/utils/imagePath';
 
 function PharmacyDetails() {
     const { pharmacy } = useLoaderData();
@@ -31,7 +32,7 @@ function PharmacyDetails() {
         async function Rate(){
             try{
                 setIsLoading(true);
-            const response = await fetch(`http://localhost:5000/users/rate/${pharmacyId}`,{
+            const response = await fetch(`${path}/users/rate/${pharmacyId}`,{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -64,7 +65,7 @@ function PharmacyDetails() {
         async function Add(){
             try{
                 setIsLoading(true);
-            const response = await fetch(`http://localhost:5000/users/favourite/${pharmacyId}`,{
+            const response = await fetch(`${path}/users/favourite/${pharmacyId}`,{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -145,7 +146,7 @@ export default PharmacyDetails;
 
 export async function ploader({params}) {
     const id = params.pharmacyId;
-    const response = await fetch(`http://localhost:5000/pharma/${id}`);
+    const response = await fetch( `${path}/pharma/${id}`);
 
     return response;
   }

@@ -6,6 +6,7 @@ import { authContext } from "../../../shared/context/auth-context";
 import useOpenModal from "../../../shared/hooks/useOpenModal";
 import Modal from "../../../shared/components/UI/Modal/modal";
 import LoadingSpinner from "../../../shared/components/UI/loadingspinner/LoadingSpinner";
+import { path } from "../../../shared/utils/imagePath";
 
 function StudentSignUp(){
     const name = useRef();
@@ -31,7 +32,7 @@ function StudentSignUp(){
                 formData.append('password', password.current.value);
                 formData.append('confirmPassword', confirmPassword.current.value);
                 setIsLoading(true);
-            const response = await fetch('http://localhost:5000/users/signup',{
+            const response = await fetch(`${path}/users/signup`,{
                 method: 'POST',
                 body: formData
             })

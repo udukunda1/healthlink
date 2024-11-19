@@ -1,0 +1,7 @@
+{
+    "env": {
+        "dbuser": "boy",
+        "dbpassword": "1235",
+        "dbname": "healthlink"
+    }
+}

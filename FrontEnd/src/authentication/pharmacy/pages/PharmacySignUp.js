@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Modal from "../../../shared/components/UI/Modal/modal";
 import useOpenModal from "../../../shared/hooks/useOpenModal";
 import LoadingSpinner from "../../../shared/components/UI/loadingspinner/LoadingSpinner";
+import { path } from "../../../shared/utils/imagePath";
 
 function PharmacySignUp(){
 
@@ -41,7 +42,7 @@ function PharmacySignUp(){
                 formData.append('confirmPassword', confirmPasswordRef.current.value);
                 formData.append('code', codeRef.current.value);
                 setIsLoading(true);
-            const response = await fetch('http://localhost:5000/pharma/signup',{
+            const response = await fetch(`${path}/pharma/signup`,{
                 method: 'POST',
                 body: formData
             })

@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import './FavoutiteCard.css';
 import { authContext } from '../../context/auth-context';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { path } from '../../utils/imagePath';
 
 function FavoutiteCard({image, name, id}){
 
@@ -14,7 +15,7 @@ function FavoutiteCard({image, name, id}){
         async function Remove(){
             try{
 
-            const response = await fetch(`http://localhost:5000/users/favourite/${id}`,{
+            const response = await fetch(`${path}/users/favourite/${id}`,{
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,7 +42,7 @@ function FavoutiteCard({image, name, id}){
     return(
         <div className='favoutite-card'>
             <div className='favoutite-card__image'>
-            <img src={`http://localhost:5000/uploads/images/${image}`} alt='img' />
+            <img src={`${path}/uploads/images/${image}`} alt='img' />
             </div>
             <h5>{name}</h5>
             <button onClick={handleRemove}>Remove</button>

@@ -6,6 +6,7 @@ import LoadingSpinner from '../../../shared/components/UI/loadingspinner/Loading
 import useOpenModal from '../../../shared/hooks/useOpenModal';
 import { useEffect } from 'react';
 import Modal from '../../../shared/components/UI/Modal/modal';
+import { path } from '../../../shared/utils/imagePath';
 
 function Directory(){
     const navigation = useNavigation();
@@ -45,7 +46,7 @@ export default Directory;
 
 export async function dloader() {
   try{
-    const response = await fetch('http://localhost:5000/pharma');
+    const response = await fetch(`${path}/pharma`);
   if(!response.ok){
     return {error: true, message: 'failed to fetch from server'}
   }

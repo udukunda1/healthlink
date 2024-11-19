@@ -9,6 +9,7 @@ import Modal from '../../../shared/components/UI/Modal/modal';
 import useOpenModal from '../../../shared/hooks/useOpenModal';
 import { Suspense, useEffect } from 'react';
 import LoadingSpinner from '../../../shared/components/UI/loadingspinner/LoadingSpinner';
+import { path } from '../../../shared/utils/imagePath';
 
 
 function Home() {
@@ -66,7 +67,7 @@ export default Home;
 
 async function loadpharma() {
   try{
-    const response = await fetch('http://localhost:5000/pharma');
+    const response = await fetch(`${path}/pharma`);
   if(!response.ok){
     return {error: true, message: 'failed to fetch from server'}
   }

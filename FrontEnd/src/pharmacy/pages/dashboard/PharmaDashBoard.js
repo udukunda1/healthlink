@@ -8,7 +8,7 @@ import { pharmaAuthContext } from '../../../shared/context/pharma-auth-context';
 import Modal from '../../../shared/components/UI/Modal/modal';
 import useOpenModal from '../../../shared/hooks/useOpenModal';
 import LoadingSpinner from '../../../shared/components/UI/loadingspinner/LoadingSpinner';
-import { imagePath } from '../../../shared/utils/imagePath';
+import { imagePath, path } from '../../../shared/utils/imagePath';
 
 function PharmaDashBoard() {
     const { pharmacy } = useLoaderData();
@@ -34,7 +34,7 @@ function PharmaDashBoard() {
         async function Add(){
             try{
                 setIsLoading(true);
-            const response = await fetch(`http://localhost:5000/pharma/medicine`,{
+            const response = await fetch(`${path}/pharma/medicine`,{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ function PharmaDashBoard() {
         async function AddServise(){
             try{
                 setIsLoading(true);
-            const response = await fetch(`http://localhost:5000/pharma/service`,{
+            const response = await fetch(`${path}/pharma/service`,{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ export default PharmaDashBoard;
 
 export async function dashboardloader({params}) {
     const id = params.pharmaId;
-    const response = await fetch(`http://localhost:5000/pharma/${id}`);
+    const response = await fetch(`${path}/pharma/${id}`);
 
     return response;
   }
