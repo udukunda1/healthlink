@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 // });
 
 
-mongoose.connect(`mongodb+srv://boy:1235@cluster0.kdnd2.mongodb.net/healthlink`)
+mongoose.connect(``)
 .then(() => {
     app.listen(process.env.PORT || 5000);
     console.log('connected');

@@ -1,0 +1,3 @@
+-set process.env.PORT ||  on app.listen
+-change nodemon appjs   to  node appjs
+-change localhost link in frontend to Heroku(or other) hosted provided link
